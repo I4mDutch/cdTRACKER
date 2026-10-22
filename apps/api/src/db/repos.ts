@@ -102,6 +102,7 @@ export async function listLinkedAccounts(db: Db): Promise<RiotAccountRow[]> {
 // ---------- oauth state ----------
 export async function createOAuthState(db: Db, userId: string | null): Promise<string> {
   const state = newToken();
+  await db.delete(s.oauthStates).where(lt(s.oauthStates.expiresAt, new Date()));
   await db.insert(s.oauthStates).values({ state, userId, expiresAt: new Date(Date.now() + OAUTH_STATE_TTL_MS) });
   return state;
 }

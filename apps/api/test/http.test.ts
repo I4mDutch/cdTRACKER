@@ -350,7 +350,8 @@ describe('RSO flow and isolation between users', () => {
   });
 
   it('mock authorize page and bad state / cancel', async () => {
-    const c = await request(app).post('/api/riot/connect').set(H).send({ consent: true });
+    const flow = request.agent(app);
+    const c = await flow.post('/api/riot/connect').set(H).send({ consent: true });
     expect(c.body.redirectUrl).toMatch(/^\/api\/riot\/mock-authorize\?state=/);
     const page = await request(app).get(c.body.redirectUrl);
     expect(page.status).toBe(200);
@@ -363,10 +364,13 @@ describe('RSO flow and isolation between users', () => {
     expect(bad.headers.location).toContain('/settings?error=state');
 
     const state = new URL(c.body.redirectUrl, 'http://x').searchParams.get('state');
-    const cancelled = await request(app).get(`/api/riot/callback?error=access_denied&state=${state}`);
+    // a callback URL replayed in a different browser (no binding cookie) is rejected
+    const foreign = await request(app).get(`/api/riot/callback?code=fixture-token-0001&state=${state}`);
+    expect(foreign.headers.location).toContain('error=state');
+    const cancelled = await flow.get(`/api/riot/callback?error=access_denied&state=${state}`);
     expect(cancelled.headers.location).toContain('error=cancelled');
     // state is single-use
-    const replay = await request(app).get(`/api/riot/callback?code=fixture-token-0001&state=${state}`);
+    const replay = await flow.get(`/api/riot/callback?code=fixture-token-0001&state=${state}`);
     expect(replay.headers.location).toContain('error=state');
   });
 
@@ -381,7 +385,7 @@ describe('RSO flow and isolation between users', () => {
     const cb = await rsoCallback(b, 'fixture-token-0002');
     expect(cb.status).toBe(302);
     expect(cb.headers.location).toBe('http://localhost:5173/settings?linked=1');
-    expect(cb.headers['set-cookie']?.[0]).toMatch(/va_session=/);
+    expect(String(cb.headers['set-cookie'])).toMatch(/va_session=/);
     const me = await b.get('/api/me');
     expect(me.body.user.displayName).toBe('OtherDemo');
     expect(me.body.link.riotId).toBe('OtherDemo#0002');

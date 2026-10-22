@@ -24,7 +24,7 @@ export function requestLogger(): RequestHandler {
   return (req, res, next) => {
     const t0 = Date.now();
     res.on('finish', () => {
-      log('request', { method: req.method, path: req.path, status: res.statusCode, ms: Date.now() - t0 });
+      log('request', { method: req.method, path: req.path.replace(/^\/api\/public\/[^/]+/, '/api/public/:token'), status: res.statusCode, ms: Date.now() - t0 });
     });
     next();
   };

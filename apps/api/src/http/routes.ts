@@ -85,6 +85,8 @@ const escapeHtml = (s: string): string =>
 const jobState = (s: string): SyncResponse['state'] =>
   s === 'queued' || s === 'running' || s === 'succeeded' ? s : 'failed';
 
+const OAUTH_COOKIE = 'va_oauth_state';
+
 const isoDay = (iso: string): string => iso.slice(0, 10);
 
 export function createApiRouter(deps: RouterDeps): Router {
@@ -184,6 +186,8 @@ export function createApiRouter(deps: RouterDeps): Router {
   router.post('/riot/connect', sensitive, async (req, res) => {
     parse(connectSchema, req.body);
     const state = await createOAuthState(db, currentUser(res)?.id ?? null);
+    // Bind the flow to this browser so a captured callback URL can't be replayed in someone else's (login CSRF).
+    res.cookie(OAUTH_COOKIE, state, { httpOnly: true, sameSite: 'lax', secure: env.cookieSecure, path: '/api/riot', maxAge: 10 * 60_000 });
     const body: ConnectResponse = { redirectUrl: rso.authorizeUrl(state) };
     res.json(body);
   });
@@ -209,8 +213,13 @@ export function createApiRouter(deps: RouterDeps): Router {
 
   router.get('/riot/callback', async (req, res) => {
     const state = typeof req.query.state === 'string' ? req.query.state : '';
-    const st = state ? await consumeOAuthState(db, state) : null;
+    const bound = (req.cookies as Record<string, unknown> | undefined)?.[OAUTH_COOKIE];
+    res.clearCookie(OAUTH_COOKIE, { httpOnly: true, sameSite: 'lax', secure: env.cookieSecure, path: '/api/riot' });
+    if (!state || bound !== state) return redirectSettings(res, 'error=state');
+    const st = await consumeOAuthState(db, state);
     if (!st) return redirectSettings(res, 'error=state');
+    // Linking flows must finish in the session that started them.
+    if (st.userId && currentUser(res)?.id !== st.userId) return redirectSettings(res, 'error=state');
     if (typeof req.query.error === 'string') return redirectSettings(res, 'error=cancelled');
     const code = typeof req.query.code === 'string' ? req.query.code : '';
     if (!code) return redirectSettings(res, 'error=cancelled');
@@ -236,7 +245,6 @@ export function createApiRouter(deps: RouterDeps): Router {
       if (current && current.puuid !== puuid) await deleteUserMatchData(db, st.userId); // switching accounts: drop the old account's data
       await upsertRiotAccount(db, { userId: st.userId, ...link });
       userId = st.userId;
-      if (!currentUser(res) || currentUser(res)?.id !== userId) await setSessionCookie(res, userId);
     } else {
       // RSO as sign-in.
       if (owner) {

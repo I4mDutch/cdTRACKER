@@ -70,6 +70,9 @@ export function loadEnv(source: Record<string, string | undefined> = process.env
   }
   const e = parsed.data;
   const demoMode = e.DEMO_MODE ?? e.RIOT_API_KEY === undefined;
+  if (source.NODE_ENV === 'production' && e.DEMO_MODE === undefined) {
+    throw new EnvError('NODE_ENV=production requires DEMO_MODE to be set explicitly (false for live Riot access).');
+  }
   if (!demoMode) {
     const missing = (
       [

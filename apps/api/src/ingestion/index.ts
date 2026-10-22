@@ -210,7 +210,7 @@ export async function runSyncJob(deps: IngestionDeps, jobId: string, userId: str
       const message = 'Sync failed unexpectedly. Try again later.';
       await updateJob(db, jobId, { state: 'failed', errorCategory: 'internal', errorMessage: message, finishedAt: now() });
       await setLinkState(db, userId, 'sync_failed', { lastError: message });
-      log('sync_internal_error', { jobId, error: err instanceof Error ? err.message : String(err) });
+      log('sync_internal_error', { jobId, error: err instanceof Error ? err.name : 'unknown' });
     }
   }
   return finish();
@@ -245,7 +245,7 @@ export class SyncQueue {
         try {
           await runSyncJob(this.deps, next.jobId, next.userId);
         } catch (err) {
-          this.deps.log?.('sync_queue_error', { jobId: next.jobId, error: err instanceof Error ? err.message : String(err) });
+          this.deps.log?.('sync_queue_error', { jobId: next.jobId, error: err instanceof Error ? err.name : 'unknown' });
         }
         this.current = null;
       }
@@ -271,7 +271,7 @@ export class SyncQueue {
           await this.enqueue(a.userId);
         }
       } catch (err) {
-        this.deps.log?.('scheduler_error', { error: err instanceof Error ? err.message : String(err) });
+        this.deps.log?.('scheduler_error', { error: err instanceof Error ? err.name : 'unknown' });
       }
     };
     const handle = setInterval(() => void tick(), intervalMs);
