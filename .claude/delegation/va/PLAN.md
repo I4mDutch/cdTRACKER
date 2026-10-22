@@ -66,4 +66,9 @@ Key rules carried from plan.md:
 - Fixture realism: T01 must keep team rounds, round winners and kill events mutually consistent.
 
 ## Log
-(filled in during execution)
+- All 9 tasks ran on Sonnet; none blocked, none needed a retry or a tier escalation. Opus re-ran every acceptance command.
+- T01: player 0002's 15 matches are a subset of 0001's (keeps the 69-file count); T09 authorization test adjusted.
+- T05 → T09 contract gap: RSO had to double as sign-in for signed-out users. T07 was amended mid-run (nullable `oauth_states.user_id`), and the T09 spec was updated.
+- T08 → T09: startup recovery for interrupted jobs added to the T09 spec.
+- Integration (Opus): end-to-end run in Playwright (demo login → sync → every view). Fixed mobile overflow from the visually-hidden chart table. An independent Sonnet agent reviewed the security/privacy code.
+- Final: 175 tests (core 87, api 74, web 14), typecheck and web build all green.

@@ -57,7 +57,8 @@ export function TrendChart({ title, yLabel, points, format, scale = 1 }: Props) 
       <div className="chart-canvas">
         <Line data={data} options={options} role="img" aria-label={`${title}. Line chart; data table follows.`} />
       </div>
-      <table className="sr-only">
+      <div className="sr-only">
+      <table>
         <caption>{title}</caption>
         <thead>
           <tr>
@@ -76,6 +77,7 @@ export function TrendChart({ title, yLabel, points, format, scale = 1 }: Props) 
           ))}
         </tbody>
       </table>
+      </div>
     </figure>
   );
 }
