@@ -1,0 +1,5743 @@
+{
+  "matchInfo": {
+    "matchId": "607f3300-877c-438c-8c19-a175e52eb6b4",
+    "mapId": "/Game/Maps/Lotus/Lotus",
+    "gameLengthMillis": 2125107,
+    "gameStartMillis": 1781723313962,
+    "provisioningFlowId": "Matchmaking",
+    "isCompleted": true,
+    "customGameName": "",
+    "queueId": "competitive",
+    "gameMode": "/Game/GameModes/Bomb/BombGameMode.BombGameMode_C",
+    "isRanked": true,
+    "seasonId": "00fb8673-8b42-4c83-8548-4f3e32248c1e",
+    "gameVersion": "release-09.06-shipping-12-2701001"
+  },
+  "players": [
+    {
+      "puuid": "synthetic-8-1",
+      "gameName": "Player1",
+      "tagLine": "1001",
+      "teamId": "Red",
+      "partyId": "66f93474-8bc1-4752-8066-c2f4a1382b50",
+      "characterId": "c3b7cf3c-2563-42b9-8240-9d3fb64afebe",
+      "stats": {
+        "score": 3023,
+        "roundsPlayed": 20,
+        "kills": 14,
+        "deaths": 9,
+        "assists": 4,
+        "playtimeMillis": 2018798,
+        "abilityCasts": {
+          "grenadeCasts": 6,
+          "ability1Casts": 2,
+          "ability2Casts": 10,
+          "ultimateCasts": 0
+        }
+      },
+      "competitiveTier": 12
+    },
+    {
+      "puuid": "synthetic-8-2",
+      "gameName": "Player2",
+      "tagLine": "1002",
+      "teamId": "Red",
+      "partyId": "66f93474-8bc1-4752-8066-c2f4a1382b50",
+      "characterId": "42a85121-4aa1-4883-8c4f-fd020f5bd14d",
+      "stats": {
+        "score": 1705,
+        "roundsPlayed": 20,
+        "kills": 8,
+        "deaths": 12,
+        "assists": 5,
+        "playtimeMillis": 2017581,
+        "abilityCasts": {
+          "grenadeCasts": 6,
+          "ability1Casts": 5,
+          "ability2Casts": 8,
+          "ultimateCasts": 0
+        }
+      },
+      "competitiveTier": 18
+    },
+    {
+      "puuid": "synthetic-8-3",
+      "gameName": "Player3",
+      "tagLine": "1003",
+      "teamId": "Red",
+      "partyId": "66f93474-8bc1-4752-8066-c2f4a1382b50",
+      "characterId": "de10d4e8-eb2a-4f2f-8261-65a881cd424e",
+      "stats": {
+        "score": 2589,
+        "roundsPlayed": 20,
+        "kills": 12,
+        "deaths": 10,
+        "assists": 6,
+        "playtimeMillis": 2018070,
+        "abilityCasts": {
+          "grenadeCasts": 8,
+          "ability1Casts": 7,
+          "ability2Casts": 17,
+          "ultimateCasts": 2
+        }
+      },
+      "competitiveTier": 18
+    },
+    {
+      "puuid": "synthetic-8-4",
+      "gameName": "Player4",
+      "tagLine": "1004",
+      "teamId": "Red",
+      "partyId": "66f93474-8bc1-4752-8066-c2f4a1382b50",
+      "characterId": "42a85121-4aa1-4883-8c4f-fd020f5bd14d",
+      "stats": {
+        "score": 1504,
+        "roundsPlayed": 20,
+        "kills": 7,
+        "deaths": 11,
+        "assists": 8,
+        "playtimeMillis": 2008686,
+        "abilityCasts": {
+          "grenadeCasts": 2,
+          "ability1Casts": 2,
+          "ability2Casts": 11,
+          "ultimateCasts": 3
+        }
+      },
+      "competitiveTier": 16
+    },
+    {
+      "puuid": "demo-puuid-0001",
+      "gameName": "DemoPlayer",
+      "tagLine": "0001",
+      "teamId": "Red",
+      "partyId": "66f93474-8bc1-4752-8066-c2f4a1382b50",
+      "characterId": "a08ff49b-6f77-4263-8271-6c43069c43a8",
+      "stats": {
+        "score": 1290,
+        "roundsPlayed": 20,
+        "kills": 6,
+        "deaths": 13,
+        "assists": 11,
+        "playtimeMillis": 2001882,
+        "abilityCasts": {
+          "grenadeCasts": 9,
+          "ability1Casts": 2,
+          "ability2Casts": 11,
+          "ultimateCasts": 1
+        }
+      },
+      "competitiveTier": 17
+    },
+    {
+      "puuid": "synthetic-8-5",
+      "gameName": "Player5",
+      "tagLine": "1005",
+      "teamId": "Blue",
+      "partyId": "c168fd74-25e9-4928-8ba9-da935936c5db",
+      "characterId": "2b4a48e1-12a0-486c-841f-f0d16986b24f",
+      "stats": {
+        "score": 1912,
+        "roundsPlayed": 20,
+        "kills": 9,
+        "deaths": 9,
+        "assists": 4,
+        "playtimeMillis": 2005117,
+        "abilityCasts": {
+          "grenadeCasts": 12,
+          "ability1Casts": 17,
+          "ability2Casts": 9,
+          "ultimateCasts": 3
+        }
+      },
+      "competitiveTier": 16
+    },
+    {
+      "puuid": "synthetic-8-6",
+      "gameName": "Player6",
+      "tagLine": "1006",
+      "teamId": "Blue",
+      "partyId": "c168fd74-25e9-4928-8ba9-da935936c5db",
+      "characterId": "2b4a48e1-12a0-486c-841f-f0d16986b24f",
+      "stats": {
+        "score": 2800,
+        "roundsPlayed": 20,
+        "kills": 13,
+        "deaths": 10,
+        "assists": 7,
+        "playtimeMillis": 2018311,
+        "abilityCasts": {
+          "grenadeCasts": 10,
+          "ability1Casts": 3,
+          "ability2Casts": 1,
+          "ultimateCasts": 0
+        }
+      },
+      "competitiveTier": 18
+    },
+    {
+      "puuid": "synthetic-8-7",
+      "gameName": "Player7",
+      "tagLine": "1007",
+      "teamId": "Blue",
+      "partyId": "c168fd74-25e9-4928-8ba9-da935936c5db",
+      "characterId": "c3b7cf3c-2563-42b9-8240-9d3fb64afebe",
+      "stats": {
+        "score": 3020,
+        "roundsPlayed": 20,
+        "kills": 14,
+        "deaths": 8,
+        "assists": 11,
+        "playtimeMillis": 2010446,
+        "abilityCasts": {
+          "grenadeCasts": 0,
+          "ability1Casts": 1,
+          "ability2Casts": 14,
+          "ultimateCasts": 3
+        }
+      },
+      "competitiveTier": 17
+    },
+    {
+      "puuid": "synthetic-8-8",
+      "gameName": "Player8",
+      "tagLine": "1008",
+      "teamId": "Blue",
+      "partyId": "c168fd74-25e9-4928-8ba9-da935936c5db",
+      "characterId": "42a85121-4aa1-4883-8c4f-fd020f5bd14d",
+      "stats": {
+        "score": 1729,
+        "roundsPlayed": 20,
+        "kills": 8,
+        "deaths": 8,
+        "assists": 12,
+        "playtimeMillis": 2011651,
+        "abilityCasts": {
+          "grenadeCasts": 1,
+          "ability1Casts": 15,
+          "ability2Casts": 11,
+          "ultimateCasts": 2
+        }
+      },
+      "competitiveTier": 18
+    },
+    {
+      "puuid": "synthetic-8-9",
+      "gameName": "Player9",
+      "tagLine": "1009",
+      "teamId": "Blue",
+      "partyId": "c168fd74-25e9-4928-8ba9-da935936c5db",
+      "characterId": "4e86a538-cc03-4aa0-856d-a5590e89a11d",
+      "stats": {
+        "score": 2325,
+        "roundsPlayed": 20,
+        "kills": 11,
+        "deaths": 12,
+        "assists": 6,
+        "playtimeMillis": 2018144,
+        "abilityCasts": {
+          "grenadeCasts": 1,
+          "ability1Casts": 3,
+          "ability2Casts": 9,
+          "ultimateCasts": 1
+        }
+      },
+      "competitiveTier": 15
+    }
+  ],
+  "teams": [
+    {
+      "teamId": "Red",
+      "won": true,
+      "roundsPlayed": 20,
+      "roundsWon": 13,
+      "numPoints": 13
+    },
+    {
+      "teamId": "Blue",
+      "won": false,
+      "roundsPlayed": 20,
+      "roundsWon": 7,
+      "numPoints": 7
+    }
+  ],
+  "roundResults": [
+    {
+      "roundNum": 0,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Blue",
+      "bombPlanter": null,
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 16292,
+              "timeSinceRoundStartMillis": 16292,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-8",
+              "victimLocation": {
+                "x": 2069,
+                "y": -4733
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-8",
+              "damage": 128,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 214,
+          "economy": {
+            "loadoutValue": 6339,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 3091,
+            "spent": 511
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2028,
+            "weapon": "Ghost",
+            "armor": "Heavy",
+            "remaining": 2812,
+            "spent": 340
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1225,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 1575,
+            "spent": 1078
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 63285,
+              "timeSinceRoundStartMillis": 63285,
+              "killer": "synthetic-8-4",
+              "victim": "synthetic-8-5",
+              "victimLocation": {
+                "x": -924,
+                "y": 1077
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-5",
+              "damage": 122,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 0
+            }
+          ],
+          "score": 211,
+          "economy": {
+            "loadoutValue": 4384,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 3128,
+            "spent": 4264
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 74360,
+              "timeSinceRoundStartMillis": 74360,
+              "killer": "demo-puuid-0001",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 7266,
+                "y": -3171
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 92817,
+              "timeSinceRoundStartMillis": 92817,
+              "killer": "demo-puuid-0001",
+              "victim": "synthetic-8-7",
+              "victimLocation": {
+                "x": 920,
+                "y": -3828
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 153,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 1
+            },
+            {
+              "receiver": "synthetic-8-7",
+              "damage": 105,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 1
+            }
+          ],
+          "score": 430,
+          "economy": {
+            "loadoutValue": 7061,
+            "weapon": "Vandal",
+            "armor": "None",
+            "remaining": 1938,
+            "spent": 2549
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5613,
+            "weapon": "Phantom",
+            "armor": "Light",
+            "remaining": 462,
+            "spent": 4043
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 78503,
+              "timeSinceRoundStartMillis": 78503,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": 2965,
+                "y": 264
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 144,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 222,
+          "economy": {
+            "loadoutValue": 7548,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 79,
+            "spent": 360
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 31290,
+              "timeSinceRoundStartMillis": 31290,
+              "killer": "synthetic-8-7",
+              "victim": "synthetic-8-3",
+              "victimLocation": {
+                "x": 1323,
+                "y": -6629
+              },
+              "assistants": [
+                "synthetic-8-6"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-3",
+              "damage": 114,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 0
+            }
+          ],
+          "score": 207,
+          "economy": {
+            "loadoutValue": 6687,
+            "weapon": "Vandal",
+            "armor": "None",
+            "remaining": 170,
+            "spent": 4742
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6560,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 2055,
+            "spent": 2597
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 42506,
+              "timeSinceRoundStartMillis": 42506,
+              "killer": "synthetic-8-9",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": -1972,
+                "y": -4530
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 47537,
+              "timeSinceRoundStartMillis": 47537,
+              "killer": "synthetic-8-9",
+              "victim": "synthetic-8-1",
+              "victimLocation": {
+                "x": 5148,
+                "y": 1225
+              },
+              "assistants": [
+                "synthetic-8-7"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 154,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            },
+            {
+              "receiver": "synthetic-8-1",
+              "damage": 103,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 429,
+          "economy": {
+            "loadoutValue": 7832,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 2796,
+            "spent": 3665
+          }
+        }
+      ]
+    },
+    {
+      "roundNum": 1,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": null,
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3845,
+            "weapon": "Vandal",
+            "armor": "None",
+            "remaining": 1793,
+            "spent": 1837
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 173592,
+              "timeSinceRoundStartMillis": 53592,
+              "killer": "synthetic-8-2",
+              "victim": "synthetic-8-5",
+              "victimLocation": {
+                "x": 2860,
+                "y": -8409
+              },
+              "assistants": [
+                "demo-puuid-0001"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 201136,
+              "timeSinceRoundStartMillis": 81136,
+              "killer": "synthetic-8-2",
+              "victim": "synthetic-8-6",
+              "victimLocation": {
+                "x": 6279,
+                "y": -8029
+              },
+              "assistants": [
+                "synthetic-8-1",
+                "demo-puuid-0001"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 209623,
+              "timeSinceRoundStartMillis": 89623,
+              "killer": "synthetic-8-2",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 8798,
+                "y": 2940
+              },
+              "assistants": [
+                "demo-puuid-0001"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-5",
+              "damage": 131,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-6",
+              "damage": 115,
+              "headshots": 1,
+              "bodyshots": 3,
+              "legshots": 1
+            },
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 109,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 1
+            }
+          ],
+          "score": 629,
+          "economy": {
+            "loadoutValue": 6047,
+            "weapon": "Phantom",
+            "armor": "Light",
+            "remaining": 3774,
+            "spent": 4246
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3996,
+            "weapon": "Operator",
+            "armor": "Heavy",
+            "remaining": 3535,
+            "spent": 1148
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 8659,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 965,
+            "spent": 177
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2324,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 2173,
+            "spent": 2562
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7515,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 3466,
+            "spent": 2747
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2000,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 845,
+            "spent": 1595
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2049,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 2970,
+            "spent": 3370
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 177732,
+              "timeSinceRoundStartMillis": 57732,
+              "killer": "synthetic-8-8",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": 2611,
+                "y": -5503
+              },
+              "assistants": [
+                "synthetic-8-7"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 107,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 204,
+          "economy": {
+            "loadoutValue": 8706,
+            "weapon": "Ghost",
+            "armor": "Heavy",
+            "remaining": 176,
+            "spent": 920
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 151419,
+              "timeSinceRoundStartMillis": 31419,
+              "killer": "synthetic-8-9",
+              "victim": "synthetic-8-3",
+              "victimLocation": {
+                "x": 394,
+                "y": -8327
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-3",
+              "damage": 109,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 205,
+          "economy": {
+            "loadoutValue": 3005,
+            "weapon": "Sheriff",
+            "armor": "Light",
+            "remaining": 874,
+            "spent": 3081
+          }
+        }
+      ]
+    },
+    {
+      "roundNum": 2,
+      "roundResult": "Bomb defused",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Blue",
+      "bombPlanter": "synthetic-8-1",
+      "bombDefuser": "synthetic-8-7",
+      "roundResultCode": "Defuse",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7065,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 2466,
+            "spent": 1411
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5418,
+            "weapon": "Operator",
+            "armor": "Heavy",
+            "remaining": 862,
+            "spent": 895
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 8043,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 1224,
+            "spent": 4673
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2290,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 2619,
+            "spent": 4037
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1269,
+            "weapon": "Phantom",
+            "armor": "Light",
+            "remaining": 110,
+            "spent": 2637
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 247152,
+              "timeSinceRoundStartMillis": 7152,
+              "killer": "synthetic-8-5",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": 7899,
+                "y": -8565
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 139,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 220,
+          "economy": {
+            "loadoutValue": 8114,
+            "weapon": "Phantom",
+            "armor": "Light",
+            "remaining": 1412,
+            "spent": 3406
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7772,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 3247,
+            "spent": 103
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 278580,
+              "timeSinceRoundStartMillis": 38580,
+              "killer": "synthetic-8-7",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": -1814,
+                "y": -5602
+              },
+              "assistants": [
+                "synthetic-8-8"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 114,
+              "headshots": 1,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 207,
+          "economy": {
+            "loadoutValue": 6904,
+            "weapon": "Phantom",
+            "armor": "Light",
+            "remaining": 3761,
+            "spent": 3313
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 252929,
+              "timeSinceRoundStartMillis": 12929,
+              "killer": "synthetic-8-8",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 8046,
+                "y": -4302
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 140,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 220,
+          "economy": {
+            "loadoutValue": 8010,
+            "weapon": "Ghost",
+            "armor": "Light",
+            "remaining": 3075,
+            "spent": 3566
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 329656,
+              "timeSinceRoundStartMillis": 89656,
+              "killer": "synthetic-8-9",
+              "victim": "synthetic-8-1",
+              "victimLocation": {
+                "x": 7105,
+                "y": 1737
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-1",
+              "damage": 103,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 202,
+          "economy": {
+            "loadoutValue": 4676,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 2025,
+            "spent": 3543
+          }
+        }
+      ],
+      "plantRoundTime": 69535,
+      "plantSite": "A",
+      "defuseRoundTime": 91504
+    },
+    {
+      "roundNum": 3,
+      "roundResult": "Bomb detonated",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": "synthetic-8-4",
+      "bombDefuser": null,
+      "roundResultCode": "Detonate",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6224,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 2520,
+            "spent": 878
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 381756,
+              "timeSinceRoundStartMillis": 21756,
+              "killer": "synthetic-8-2",
+              "victim": "synthetic-8-5",
+              "victimLocation": {
+                "x": -923,
+                "y": 3808
+              },
+              "assistants": [
+                "demo-puuid-0001",
+                "synthetic-8-3"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-5",
+              "damage": 116,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 1
+            }
+          ],
+          "score": 208,
+          "economy": {
+            "loadoutValue": 4422,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 474,
+            "spent": 1946
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 435078,
+              "timeSinceRoundStartMillis": 75078,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 3738,
+                "y": 2350
+              },
+              "assistants": [
+                "demo-puuid-0001"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 160,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 0
+            }
+          ],
+          "score": 230,
+          "economy": {
+            "loadoutValue": 7507,
+            "weapon": "Ghost",
+            "armor": "None",
+            "remaining": 1112,
+            "spent": 1020
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 8078,
+            "weapon": "Phantom",
+            "armor": "Heavy",
+            "remaining": 2134,
+            "spent": 3131
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7709,
+            "weapon": "Phantom",
+            "armor": "Heavy",
+            "remaining": 864,
+            "spent": 397
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3613,
+            "weapon": "Vandal",
+            "armor": "None",
+            "remaining": 600,
+            "spent": 2582
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 439503,
+              "timeSinceRoundStartMillis": 79503,
+              "killer": "synthetic-8-6",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 8053,
+                "y": -4331
+              },
+              "assistants": [
+                "synthetic-8-8"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 458561,
+              "timeSinceRoundStartMillis": 98561,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-3",
+              "victimLocation": {
+                "x": 6881,
+                "y": -1750
+              },
+              "assistants": [
+                "synthetic-8-7"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 136,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-3",
+              "damage": 106,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 421,
+          "economy": {
+            "loadoutValue": 1188,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 446,
+            "spent": 1114
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 377909,
+              "timeSinceRoundStartMillis": 17909,
+              "killer": "synthetic-8-7",
+              "victim": "synthetic-8-1",
+              "victimLocation": {
+                "x": 4036,
+                "y": 1704
+              },
+              "assistants": [
+                "synthetic-8-5"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-1",
+              "damage": 153,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 227,
+          "economy": {
+            "loadoutValue": 7407,
+            "weapon": "Ghost",
+            "armor": "None",
+            "remaining": 2959,
+            "spent": 1443
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1421,
+            "weapon": "Sheriff",
+            "armor": "Light",
+            "remaining": 3113,
+            "spent": 4534
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6827,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 1102,
+            "spent": 3847
+          }
+        }
+      ],
+      "plantRoundTime": 27373,
+      "plantSite": "B"
+    },
+    {
+      "roundNum": 4,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Blue",
+      "bombPlanter": "synthetic-8-1",
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 559779,
+              "timeSinceRoundStartMillis": 79779,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-6",
+              "victimLocation": {
+                "x": 8877,
+                "y": -715
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 580000,
+              "timeSinceRoundStartMillis": 100000,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-7",
+              "victimLocation": {
+                "x": 1872,
+                "y": -1276
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-6",
+              "damage": 131,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 1
+            },
+            {
+              "receiver": "synthetic-8-7",
+              "damage": 136,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 434,
+          "economy": {
+            "loadoutValue": 3993,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 1292,
+            "spent": 1434
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 529887,
+              "timeSinceRoundStartMillis": 49887,
+              "killer": "synthetic-8-2",
+              "victim": "synthetic-8-5",
+              "victimLocation": {
+                "x": 2231,
+                "y": 1933
+              },
+              "assistants": [
+                "synthetic-8-1",
+                "synthetic-8-4"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-5",
+              "damage": 118,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 1
+            }
+          ],
+          "score": 209,
+          "economy": {
+            "loadoutValue": 4262,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 1678,
+            "spent": 263
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2231,
+            "weapon": "Phantom",
+            "armor": "Light",
+            "remaining": 635,
+            "spent": 4207
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5069,
+            "weapon": "Sheriff",
+            "armor": "Light",
+            "remaining": 2139,
+            "spent": 818
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5283,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 2600,
+            "spent": 3217
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 977,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 2738,
+            "spent": 1512
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 558787,
+              "timeSinceRoundStartMillis": 78787,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-3",
+              "victimLocation": {
+                "x": 1859,
+                "y": 44
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-3",
+              "damage": 150,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 225,
+          "economy": {
+            "loadoutValue": 3266,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 3618,
+            "spent": 4021
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 572494,
+              "timeSinceRoundStartMillis": 92494,
+              "killer": "synthetic-8-7",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": 8355,
+                "y": -4601
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 122,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 1
+            }
+          ],
+          "score": 211,
+          "economy": {
+            "loadoutValue": 7816,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 3418,
+            "spent": 3248
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 570619,
+              "timeSinceRoundStartMillis": 90619,
+              "killer": "synthetic-8-8",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": 7312,
+                "y": -7857
+              },
+              "assistants": [
+                "synthetic-8-9"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 143,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 1
+            }
+          ],
+          "score": 222,
+          "economy": {
+            "loadoutValue": 4852,
+            "weapon": "Phantom",
+            "armor": "Heavy",
+            "remaining": 1196,
+            "spent": 3680
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5805,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 662,
+            "spent": 440
+          }
+        }
+      ],
+      "plantRoundTime": 44145,
+      "plantSite": "C"
+    },
+    {
+      "roundNum": 5,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": null,
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 616343,
+              "timeSinceRoundStartMillis": 16343,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-5",
+              "victimLocation": {
+                "x": 2573,
+                "y": 2784
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 637893,
+              "timeSinceRoundStartMillis": 37893,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 1200,
+                "y": 1343
+              },
+              "assistants": [
+                "synthetic-8-3"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-5",
+              "damage": 130,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 1
+            },
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 108,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 419,
+          "economy": {
+            "loadoutValue": 1797,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 1065,
+            "spent": 2539
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1964,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 1625,
+            "spent": 2032
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6639,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 1559,
+            "spent": 2808
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3174,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 3026,
+            "spent": 583
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 699541,
+              "timeSinceRoundStartMillis": 99541,
+              "killer": "demo-puuid-0001",
+              "victim": "synthetic-8-6",
+              "victimLocation": {
+                "x": 1636,
+                "y": -774
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-6",
+              "damage": 107,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 204,
+          "economy": {
+            "loadoutValue": 2852,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 3136,
+            "spent": 1693
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3007,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 3183,
+            "spent": 3258
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 644675,
+              "timeSinceRoundStartMillis": 44675,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-1",
+              "victimLocation": {
+                "x": 7659,
+                "y": -8536
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 658223,
+              "timeSinceRoundStartMillis": 58223,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-3",
+              "victimLocation": {
+                "x": 1162,
+                "y": -8917
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 663796,
+              "timeSinceRoundStartMillis": 63796,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": 1275,
+                "y": -1462
+              },
+              "assistants": [
+                "synthetic-8-8"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-1",
+              "damage": 159,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-3",
+              "damage": 127,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 149,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 669,
+          "economy": {
+            "loadoutValue": 5070,
+            "weapon": "Phantom",
+            "armor": "Heavy",
+            "remaining": 1231,
+            "spent": 1501
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2865,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 3191,
+            "spent": 3570
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3182,
+            "weapon": "Ghost",
+            "armor": "Heavy",
+            "remaining": 3460,
+            "spent": 691
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 621889,
+              "timeSinceRoundStartMillis": 21889,
+              "killer": "synthetic-8-9",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": -973,
+                "y": -5889
+              },
+              "assistants": [
+                "synthetic-8-8"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 117,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 209,
+          "economy": {
+            "loadoutValue": 6555,
+            "weapon": "Operator",
+            "armor": "Heavy",
+            "remaining": 756,
+            "spent": 1968
+          }
+        }
+      ]
+    },
+    {
+      "roundNum": 6,
+      "roundResult": "Bomb detonated",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": "synthetic-8-4",
+      "bombDefuser": null,
+      "roundResultCode": "Detonate",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4454,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 766,
+            "spent": 1187
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2465,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 800,
+            "spent": 2601
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5581,
+            "weapon": "Sheriff",
+            "armor": "Light",
+            "remaining": 280,
+            "spent": 1254
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 814360,
+              "timeSinceRoundStartMillis": 94360,
+              "killer": "synthetic-8-4",
+              "victim": "synthetic-8-7",
+              "victimLocation": {
+                "x": 8804,
+                "y": 395
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-7",
+              "damage": 103,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 202,
+          "economy": {
+            "loadoutValue": 7353,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 389,
+            "spent": 3583
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3816,
+            "weapon": "Vandal",
+            "armor": "None",
+            "remaining": 3260,
+            "spent": 2148
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1859,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 3137,
+            "spent": 1517
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3866,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 881,
+            "spent": 699
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 749057,
+              "timeSinceRoundStartMillis": 29057,
+              "killer": "synthetic-8-7",
+              "victim": "synthetic-8-1",
+              "victimLocation": {
+                "x": 1849,
+                "y": 783
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-1",
+              "damage": 138,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 219,
+          "economy": {
+            "loadoutValue": 7703,
+            "weapon": "Phantom",
+            "armor": "Heavy",
+            "remaining": 2796,
+            "spent": 4793
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 8845,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 633,
+            "spent": 3303
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 742434,
+              "timeSinceRoundStartMillis": 22434,
+              "killer": "synthetic-8-9",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 4883,
+                "y": -6961
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 115,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 208,
+          "economy": {
+            "loadoutValue": 8294,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 3307,
+            "spent": 2500
+          }
+        }
+      ],
+      "plantRoundTime": 36056,
+      "plantSite": "B"
+    },
+    {
+      "roundNum": 7,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Blue",
+      "bombPlanter": null,
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5365,
+            "weapon": "Ghost",
+            "armor": "None",
+            "remaining": 2319,
+            "spent": 2727
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5215,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 282,
+            "spent": 3979
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3764,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 2440,
+            "spent": 3056
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7421,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 3432,
+            "spent": 392
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 919581,
+              "timeSinceRoundStartMillis": 79581,
+              "killer": "demo-puuid-0001",
+              "victim": "synthetic-8-8",
+              "victimLocation": {
+                "x": -1558,
+                "y": -6921
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-8",
+              "damage": 147,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 224,
+          "economy": {
+            "loadoutValue": 8522,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 2713,
+            "spent": 2842
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 926534,
+              "timeSinceRoundStartMillis": 86534,
+              "killer": "synthetic-8-5",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 5916,
+                "y": 1970
+              },
+              "assistants": [
+                "synthetic-8-9",
+                "synthetic-8-6"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 129,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 215,
+          "economy": {
+            "loadoutValue": 1693,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 1583,
+            "spent": 1542
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 849489,
+              "timeSinceRoundStartMillis": 9489,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-1",
+              "victimLocation": {
+                "x": 7850,
+                "y": 2545
+              },
+              "assistants": [
+                "synthetic-8-8"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 880457,
+              "timeSinceRoundStartMillis": 40457,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": 239,
+                "y": -351
+              },
+              "assistants": [
+                "synthetic-8-7"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 900330,
+              "timeSinceRoundStartMillis": 60330,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": -733,
+                "y": -8971
+              },
+              "assistants": [
+                "synthetic-8-8",
+                "synthetic-8-5"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-1",
+              "damage": 102,
+              "headshots": 1,
+              "bodyshots": 3,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 116,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 102,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 610,
+          "economy": {
+            "loadoutValue": 8461,
+            "weapon": "Sheriff",
+            "armor": "Light",
+            "remaining": 539,
+            "spent": 531
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 874334,
+              "timeSinceRoundStartMillis": 34334,
+              "killer": "synthetic-8-7",
+              "victim": "synthetic-8-3",
+              "victimLocation": {
+                "x": 5499,
+                "y": 2444
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-3",
+              "damage": 142,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 1
+            }
+          ],
+          "score": 221,
+          "economy": {
+            "loadoutValue": 8508,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 3850,
+            "spent": 985
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4439,
+            "weapon": "Operator",
+            "armor": "Heavy",
+            "remaining": 736,
+            "spent": 4429
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 926,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 2394,
+            "spent": 2022
+          }
+        }
+      ]
+    },
+    {
+      "roundNum": 8,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": null,
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1003124,
+              "timeSinceRoundStartMillis": 43124,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-8",
+              "victimLocation": {
+                "x": 722,
+                "y": -8123
+              },
+              "assistants": [
+                "synthetic-8-3",
+                "synthetic-8-4"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-8",
+              "damage": 109,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 205,
+          "economy": {
+            "loadoutValue": 1633,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 1557,
+            "spent": 927
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6935,
+            "weapon": "Ghost",
+            "armor": "Light",
+            "remaining": 2833,
+            "spent": 4852
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1021709,
+              "timeSinceRoundStartMillis": 61709,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 3935,
+                "y": -2873
+              },
+              "assistants": [
+                "synthetic-8-1",
+                "synthetic-8-4"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 117,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 0
+            }
+          ],
+          "score": 209,
+          "economy": {
+            "loadoutValue": 5631,
+            "weapon": "Ghost",
+            "armor": "Light",
+            "remaining": 1696,
+            "spent": 818
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3696,
+            "weapon": "Ghost",
+            "armor": "Heavy",
+            "remaining": 236,
+            "spent": 1269
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3887,
+            "weapon": "Ghost",
+            "armor": "None",
+            "remaining": 2776,
+            "spent": 4600
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 965511,
+              "timeSinceRoundStartMillis": 5511,
+              "killer": "synthetic-8-5",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": 7797,
+                "y": -7871
+              },
+              "assistants": [
+                "synthetic-8-7"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 104,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 202,
+          "economy": {
+            "loadoutValue": 1621,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 1979,
+            "spent": 2487
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4239,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 434,
+            "spent": 1661
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 987538,
+              "timeSinceRoundStartMillis": 27538,
+              "killer": "synthetic-8-7",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 8387,
+                "y": -8663
+              },
+              "assistants": [
+                "synthetic-8-6",
+                "synthetic-8-8"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 117,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 209,
+          "economy": {
+            "loadoutValue": 3989,
+            "weapon": "Ghost",
+            "armor": "None",
+            "remaining": 2276,
+            "spent": 1978
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6628,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 2505,
+            "spent": 1733
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6461,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 2126,
+            "spent": 1080
+          }
+        }
+      ]
+    },
+    {
+      "roundNum": 9,
+      "roundResult": "Bomb detonated",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": "synthetic-8-3",
+      "bombDefuser": null,
+      "roundResultCode": "Detonate",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1164440,
+              "timeSinceRoundStartMillis": 84440,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-7",
+              "victimLocation": {
+                "x": 7004,
+                "y": -1583
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-7",
+              "damage": 144,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 222,
+          "economy": {
+            "loadoutValue": 3448,
+            "weapon": "Ghost",
+            "armor": "Heavy",
+            "remaining": 1160,
+            "spent": 3999
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2140,
+            "weapon": "Operator",
+            "armor": "Heavy",
+            "remaining": 372,
+            "spent": 2023
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1122117,
+              "timeSinceRoundStartMillis": 42117,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-8",
+              "victimLocation": {
+                "x": 8726,
+                "y": -4646
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 1150908,
+              "timeSinceRoundStartMillis": 70908,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-5",
+              "victimLocation": {
+                "x": 6127,
+                "y": 588
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-8",
+              "damage": 124,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 1
+            },
+            {
+              "receiver": "synthetic-8-5",
+              "damage": 137,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 431,
+          "economy": {
+            "loadoutValue": 8004,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 1748,
+            "spent": 4183
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1148019,
+              "timeSinceRoundStartMillis": 68019,
+              "killer": "synthetic-8-4",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 3237,
+                "y": 2009
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 1179859,
+              "timeSinceRoundStartMillis": 99859,
+              "killer": "synthetic-8-4",
+              "victim": "synthetic-8-6",
+              "victimLocation": {
+                "x": 4699,
+                "y": -4977
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 118,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-6",
+              "damage": 159,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 0
+            }
+          ],
+          "score": 439,
+          "economy": {
+            "loadoutValue": 8150,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 3341,
+            "spent": 3489
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1829,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 2379,
+            "spent": 4923
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5287,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 2864,
+            "spent": 4662
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6626,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 3362,
+            "spent": 3473
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1103082,
+              "timeSinceRoundStartMillis": 23082,
+              "killer": "synthetic-8-7",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": -1084,
+                "y": 651
+              },
+              "assistants": [
+                "synthetic-8-6"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 144,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 222,
+          "economy": {
+            "loadoutValue": 8574,
+            "weapon": "Ghost",
+            "armor": "None",
+            "remaining": 681,
+            "spent": 2640
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4275,
+            "weapon": "Vandal",
+            "armor": "None",
+            "remaining": 2221,
+            "spent": 730
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7110,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 2809,
+            "spent": 2810
+          }
+        }
+      ],
+      "plantRoundTime": 57734,
+      "plantSite": "A"
+    },
+    {
+      "roundNum": 10,
+      "roundResult": "Bomb defused",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Blue",
+      "bombPlanter": "demo-puuid-0001",
+      "bombDefuser": "synthetic-8-9",
+      "roundResultCode": "Defuse",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7881,
+            "weapon": "Phantom",
+            "armor": "Heavy",
+            "remaining": 3299,
+            "spent": 348
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2999,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 3120,
+            "spent": 3814
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3268,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 3428,
+            "spent": 3000
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1248865,
+              "timeSinceRoundStartMillis": 48865,
+              "killer": "synthetic-8-4",
+              "victim": "synthetic-8-6",
+              "victimLocation": {
+                "x": 121,
+                "y": 2928
+              },
+              "assistants": [
+                "demo-puuid-0001"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-6",
+              "damage": 137,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 219,
+          "economy": {
+            "loadoutValue": 2068,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 3422,
+            "spent": 2842
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6675,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 143,
+            "spent": 418
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1287473,
+              "timeSinceRoundStartMillis": 87473,
+              "killer": "synthetic-8-5",
+              "victim": "synthetic-8-3",
+              "victimLocation": {
+                "x": -1681,
+                "y": -4479
+              },
+              "assistants": [
+                "synthetic-8-8",
+                "synthetic-8-9"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-3",
+              "damage": 121,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 211,
+          "economy": {
+            "loadoutValue": 6333,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 75,
+            "spent": 1443
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6493,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 3187,
+            "spent": 1523
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6311,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 2225,
+            "spent": 4777
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1279383,
+              "timeSinceRoundStartMillis": 79383,
+              "killer": "synthetic-8-8",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": 68,
+                "y": -5886
+              },
+              "assistants": [
+                "synthetic-8-9",
+                "synthetic-8-7"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 138,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 1
+            }
+          ],
+          "score": 219,
+          "economy": {
+            "loadoutValue": 2404,
+            "weapon": "Ghost",
+            "armor": "Light",
+            "remaining": 3941,
+            "spent": 3819
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1242260,
+              "timeSinceRoundStartMillis": 42260,
+              "killer": "synthetic-8-9",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": -405,
+                "y": -6560
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 1251293,
+              "timeSinceRoundStartMillis": 51293,
+              "killer": "synthetic-8-9",
+              "victim": "synthetic-8-1",
+              "victimLocation": {
+                "x": -322,
+                "y": -3585
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 135,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 1
+            },
+            {
+              "receiver": "synthetic-8-1",
+              "damage": 113,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 425,
+          "economy": {
+            "loadoutValue": 6149,
+            "weapon": "Phantom",
+            "armor": "Heavy",
+            "remaining": 1329,
+            "spent": 4171
+          }
+        }
+      ],
+      "plantRoundTime": 57115,
+      "plantSite": "B",
+      "defuseRoundTime": 78174
+    },
+    {
+      "roundNum": 11,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": null,
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 8647,
+            "weapon": "Ghost",
+            "armor": "Light",
+            "remaining": 2095,
+            "spent": 444
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1388709,
+              "timeSinceRoundStartMillis": 68709,
+              "killer": "synthetic-8-2",
+              "victim": "synthetic-8-7",
+              "victimLocation": {
+                "x": 6992,
+                "y": -6239
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-7",
+              "damage": 152,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 226,
+          "economy": {
+            "loadoutValue": 3504,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 3008,
+            "spent": 199
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1341817,
+              "timeSinceRoundStartMillis": 21817,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-5",
+              "victimLocation": {
+                "x": -216,
+                "y": -7227
+              },
+              "assistants": [
+                "demo-puuid-0001",
+                "synthetic-8-2"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 1351379,
+              "timeSinceRoundStartMillis": 31379,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-8",
+              "victimLocation": {
+                "x": 5745,
+                "y": -4534
+              },
+              "assistants": [
+                "synthetic-8-1"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-5",
+              "damage": 109,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 1
+            },
+            {
+              "receiver": "synthetic-8-8",
+              "damage": 101,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 406,
+          "economy": {
+            "loadoutValue": 1306,
+            "weapon": "Vandal",
+            "armor": "None",
+            "remaining": 1114,
+            "spent": 4269
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3099,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 245,
+            "spent": 3858
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1550,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 3582,
+            "spent": 1658
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3853,
+            "weapon": "Sheriff",
+            "armor": "Light",
+            "remaining": 1741,
+            "spent": 453
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1331696,
+              "timeSinceRoundStartMillis": 11696,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": 8954,
+                "y": -7143
+              },
+              "assistants": [
+                "synthetic-8-9"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 118,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 209,
+          "economy": {
+            "loadoutValue": 8614,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 3105,
+            "spent": 1740
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1382558,
+              "timeSinceRoundStartMillis": 62558,
+              "killer": "synthetic-8-7",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": -1773,
+                "y": 2158
+              },
+              "assistants": [
+                "synthetic-8-6"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 152,
+              "headshots": 1,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 226,
+          "economy": {
+            "loadoutValue": 1554,
+            "weapon": "Phantom",
+            "armor": "Light",
+            "remaining": 2684,
+            "spent": 998
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4135,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 2376,
+            "spent": 1551
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5067,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 996,
+            "spent": 3514
+          }
+        }
+      ]
+    },
+    {
+      "roundNum": 12,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Blue",
+      "bombPlanter": null,
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1838,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 2083,
+            "spent": 754
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4906,
+            "weapon": "Operator",
+            "armor": "Heavy",
+            "remaining": 296,
+            "spent": 483
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1490986,
+              "timeSinceRoundStartMillis": 50986,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 4404,
+                "y": -2843
+              },
+              "assistants": [
+                "synthetic-8-2"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 144,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 222,
+          "economy": {
+            "loadoutValue": 8496,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 633,
+            "spent": 4816
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2628,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 2627,
+            "spent": 1884
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 874,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 918,
+            "spent": 4329
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5311,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 814,
+            "spent": 1157
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 8772,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 1584,
+            "spent": 301
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1510303,
+              "timeSinceRoundStartMillis": 70303,
+              "killer": "synthetic-8-7",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": 2610,
+                "y": 891
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 151,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 226,
+          "economy": {
+            "loadoutValue": 3153,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 3299,
+            "spent": 1296
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1468607,
+              "timeSinceRoundStartMillis": 28607,
+              "killer": "synthetic-8-8",
+              "victim": "synthetic-8-1",
+              "victimLocation": {
+                "x": 8494,
+                "y": -7930
+              },
+              "assistants": [
+                "synthetic-8-5",
+                "synthetic-8-9"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 1533947,
+              "timeSinceRoundStartMillis": 93947,
+              "killer": "synthetic-8-8",
+              "victim": "synthetic-8-3",
+              "victimLocation": {
+                "x": 6051,
+                "y": 2860
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 1539972,
+              "timeSinceRoundStartMillis": 99972,
+              "killer": "synthetic-8-8",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": 5957,
+                "y": -5847
+              },
+              "assistants": [
+                "synthetic-8-7"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-1",
+              "damage": 160,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-3",
+              "damage": 108,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 142,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 0
+            }
+          ],
+          "score": 655,
+          "economy": {
+            "loadoutValue": 5526,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 1214,
+            "spent": 754
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1476148,
+              "timeSinceRoundStartMillis": 36148,
+              "killer": "synthetic-8-9",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 2613,
+                "y": -2441
+              },
+              "assistants": [
+                "synthetic-8-7",
+                "synthetic-8-6"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 123,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 0
+            }
+          ],
+          "score": 212,
+          "economy": {
+            "loadoutValue": 5584,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 292,
+            "spent": 352
+          }
+        }
+      ]
+    },
+    {
+      "roundNum": 13,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": null,
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1572181,
+              "timeSinceRoundStartMillis": 12181,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 2797,
+                "y": -3554
+              },
+              "assistants": [
+                "demo-puuid-0001",
+                "synthetic-8-3"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 1635909,
+              "timeSinceRoundStartMillis": 75909,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-5",
+              "victimLocation": {
+                "x": 8110,
+                "y": -4495
+              },
+              "assistants": [
+                "synthetic-8-4"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 138,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            },
+            {
+              "receiver": "synthetic-8-5",
+              "damage": 153,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 1
+            }
+          ],
+          "score": 446,
+          "economy": {
+            "loadoutValue": 1933,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 3430,
+            "spent": 354
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1571409,
+              "timeSinceRoundStartMillis": 11409,
+              "killer": "synthetic-8-2",
+              "victim": "synthetic-8-6",
+              "victimLocation": {
+                "x": 1580,
+                "y": -6416
+              },
+              "assistants": [
+                "demo-puuid-0001"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-6",
+              "damage": 119,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 0
+            }
+          ],
+          "score": 210,
+          "economy": {
+            "loadoutValue": 5250,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 213,
+            "spent": 3657
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7112,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 1138,
+            "spent": 2699
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1635597,
+              "timeSinceRoundStartMillis": 75597,
+              "killer": "synthetic-8-4",
+              "victim": "synthetic-8-7",
+              "victimLocation": {
+                "x": 2183,
+                "y": 958
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-7",
+              "damage": 152,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 226,
+          "economy": {
+            "loadoutValue": 3675,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 3431,
+            "spent": 3892
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4794,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 3643,
+            "spent": 1150
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6492,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 3643,
+            "spent": 2237
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3909,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 2948,
+            "spent": 4310
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1572406,
+              "timeSinceRoundStartMillis": 12406,
+              "killer": "synthetic-8-7",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 2151,
+                "y": -6971
+              },
+              "assistants": [
+                "synthetic-8-5"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 1601872,
+              "timeSinceRoundStartMillis": 41872,
+              "killer": "synthetic-8-7",
+              "victim": "synthetic-8-3",
+              "victimLocation": {
+                "x": 8573,
+                "y": -6301
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 119,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 1
+            },
+            {
+              "receiver": "synthetic-8-3",
+              "damage": 145,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 433,
+          "economy": {
+            "loadoutValue": 6412,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 999,
+            "spent": 4126
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1591304,
+              "timeSinceRoundStartMillis": 31304,
+              "killer": "synthetic-8-8",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": 4011,
+                "y": -3706
+              },
+              "assistants": [
+                "synthetic-8-7"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 118,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 209,
+          "economy": {
+            "loadoutValue": 3460,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 2876,
+            "spent": 1581
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3653,
+            "weapon": "Ghost",
+            "armor": "None",
+            "remaining": 895,
+            "spent": 2122
+          }
+        }
+      ]
+    },
+    {
+      "roundNum": 14,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": "synthetic-8-7",
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6742,
+            "weapon": "Ghost",
+            "armor": "None",
+            "remaining": 2759,
+            "spent": 1703
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 8599,
+            "weapon": "Vandal",
+            "armor": "None",
+            "remaining": 2215,
+            "spent": 4242
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1698670,
+              "timeSinceRoundStartMillis": 18670,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 5672,
+                "y": 985
+              },
+              "assistants": [
+                "synthetic-8-4"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 1701777,
+              "timeSinceRoundStartMillis": 21777,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-6",
+              "victimLocation": {
+                "x": 7377,
+                "y": -2827
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 134,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-6",
+              "damage": 156,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 445,
+          "economy": {
+            "loadoutValue": 6936,
+            "weapon": "Ghost",
+            "armor": "Heavy",
+            "remaining": 1208,
+            "spent": 4158
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4729,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 92,
+            "spent": 917
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6826,
+            "weapon": "Ghost",
+            "armor": "Light",
+            "remaining": 3560,
+            "spent": 4259
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1745194,
+              "timeSinceRoundStartMillis": 65194,
+              "killer": "synthetic-8-5",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 3400,
+                "y": -772
+              },
+              "assistants": [
+                "synthetic-8-7",
+                "synthetic-8-8"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 139,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 220,
+          "economy": {
+            "loadoutValue": 4790,
+            "weapon": "Operator",
+            "armor": "Heavy",
+            "remaining": 1439,
+            "spent": 452
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1724,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 3772,
+            "spent": 473
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5610,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 2596,
+            "spent": 972
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7878,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 3068,
+            "spent": 1472
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7268,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 1959,
+            "spent": 2425
+          }
+        }
+      ],
+      "plantRoundTime": 51880,
+      "plantSite": "C"
+    },
+    {
+      "roundNum": 15,
+      "roundResult": "Bomb detonated",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Blue",
+      "bombPlanter": "synthetic-8-7",
+      "bombDefuser": null,
+      "roundResultCode": "Detonate",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1823894,
+              "timeSinceRoundStartMillis": 23894,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-7",
+              "victimLocation": {
+                "x": 5491,
+                "y": 218
+              },
+              "assistants": [
+                "synthetic-8-4",
+                "synthetic-8-3"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 1889553,
+              "timeSinceRoundStartMillis": 89553,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 2985,
+                "y": -8755
+              },
+              "assistants": [
+                "demo-puuid-0001",
+                "synthetic-8-2"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-7",
+              "damage": 132,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 160,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 1
+            }
+          ],
+          "score": 446,
+          "economy": {
+            "loadoutValue": 4743,
+            "weapon": "Phantom",
+            "armor": "Heavy",
+            "remaining": 601,
+            "spent": 631
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6966,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 2519,
+            "spent": 1064
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6973,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 3221,
+            "spent": 1644
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4506,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 3575,
+            "spent": 2331
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1844616,
+              "timeSinceRoundStartMillis": 44616,
+              "killer": "demo-puuid-0001",
+              "victim": "synthetic-8-5",
+              "victimLocation": {
+                "x": 5566,
+                "y": -4683
+              },
+              "assistants": [
+                "synthetic-8-2"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-5",
+              "damage": 110,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 205,
+          "economy": {
+            "loadoutValue": 4156,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 53,
+            "spent": 926
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1842398,
+              "timeSinceRoundStartMillis": 42398,
+              "killer": "synthetic-8-5",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": 8660,
+                "y": 1631
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Vandal",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 100,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 200,
+          "economy": {
+            "loadoutValue": 931,
+            "weapon": "Ghost",
+            "armor": "Heavy",
+            "remaining": 1981,
+            "spent": 3852
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1353,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 2069,
+            "spent": 4186
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2804,
+            "weapon": "Ghost",
+            "armor": "Heavy",
+            "remaining": 335,
+            "spent": 4191
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 8466,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 284,
+            "spent": 4868
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 8995,
+            "weapon": "Operator",
+            "armor": "Heavy",
+            "remaining": 1324,
+            "spent": 4934
+          }
+        }
+      ],
+      "plantRoundTime": 19750,
+      "plantSite": "C"
+    },
+    {
+      "roundNum": 16,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": null,
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7586,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 727,
+            "spent": 4894
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1980725,
+              "timeSinceRoundStartMillis": 60725,
+              "killer": "synthetic-8-2",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 7354,
+                "y": 1318
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 145,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 223,
+          "economy": {
+            "loadoutValue": 3329,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 2606,
+            "spent": 1560
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4982,
+            "weapon": "Ghost",
+            "armor": "Light",
+            "remaining": 1296,
+            "spent": 1461
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1978150,
+              "timeSinceRoundStartMillis": 58150,
+              "killer": "synthetic-8-4",
+              "victim": "synthetic-8-8",
+              "victimLocation": {
+                "x": -1594,
+                "y": -296
+              },
+              "assistants": [
+                "synthetic-8-2"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-8",
+              "damage": 114,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 207,
+          "economy": {
+            "loadoutValue": 7177,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 1197,
+            "spent": 3857
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1781,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 2297,
+            "spent": 3774
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1964524,
+              "timeSinceRoundStartMillis": 44524,
+              "killer": "synthetic-8-5",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 5793,
+                "y": -7736
+              },
+              "assistants": [
+                "synthetic-8-8"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 143,
+              "headshots": 1,
+              "bodyshots": 3,
+              "legshots": 0
+            }
+          ],
+          "score": 222,
+          "economy": {
+            "loadoutValue": 4174,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 1297,
+            "spent": 1859
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1959796,
+              "timeSinceRoundStartMillis": 39796,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-3",
+              "victimLocation": {
+                "x": 7044,
+                "y": -6039
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-3",
+              "damage": 138,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 219,
+          "economy": {
+            "loadoutValue": 6016,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 3785,
+            "spent": 3648
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6257,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 1099,
+            "spent": 4111
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3208,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 2920,
+            "spent": 2384
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 1976579,
+              "timeSinceRoundStartMillis": 56579,
+              "killer": "synthetic-8-9",
+              "victim": "synthetic-8-1",
+              "victimLocation": {
+                "x": 3131,
+                "y": -7830
+              },
+              "assistants": [
+                "synthetic-8-6"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-1",
+              "damage": 131,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 216,
+          "economy": {
+            "loadoutValue": 8960,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 3858,
+            "spent": 865
+          }
+        }
+      ]
+    },
+    {
+      "roundNum": 17,
+      "roundResult": "Bomb defused",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": "synthetic-8-6",
+      "bombDefuser": "synthetic-8-3",
+      "roundResultCode": "Defuse",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2138364,
+              "timeSinceRoundStartMillis": 98364,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-7",
+              "victimLocation": {
+                "x": 757,
+                "y": -7408
+              },
+              "assistants": [
+                "synthetic-8-3",
+                "synthetic-8-4"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-7",
+              "damage": 107,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 204,
+          "economy": {
+            "loadoutValue": 4921,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 1123,
+            "spent": 2139
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1827,
+            "weapon": "Vandal",
+            "armor": "Heavy",
+            "remaining": 1329,
+            "spent": 1101
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2091605,
+              "timeSinceRoundStartMillis": 51605,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-8",
+              "victimLocation": {
+                "x": 2050,
+                "y": 1134
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 2128970,
+              "timeSinceRoundStartMillis": 88970,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-6",
+              "victimLocation": {
+                "x": -1025,
+                "y": -4184
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Sheriff",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-8",
+              "damage": 142,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-6",
+              "damage": 103,
+              "headshots": 0,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 423,
+          "economy": {
+            "loadoutValue": 6670,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 717,
+            "spent": 1921
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3616,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 1393,
+            "spent": 853
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 8999,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 2228,
+            "spent": 4507
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4357,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 3501,
+            "spent": 2310
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3945,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 163,
+            "spent": 4147
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2066059,
+              "timeSinceRoundStartMillis": 26059,
+              "killer": "synthetic-8-7",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": 5198,
+                "y": -267
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 119,
+              "headshots": 1,
+              "bodyshots": 3,
+              "legshots": 1
+            }
+          ],
+          "score": 210,
+          "economy": {
+            "loadoutValue": 8720,
+            "weapon": "Ghost",
+            "armor": "None",
+            "remaining": 2793,
+            "spent": 1011
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5670,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 3203,
+            "spent": 640
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2071223,
+              "timeSinceRoundStartMillis": 31223,
+              "killer": "synthetic-8-9",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 1846,
+                "y": -8297
+              },
+              "assistants": [
+                "synthetic-8-8"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Spectre",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 137,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 219,
+          "economy": {
+            "loadoutValue": 1031,
+            "weapon": "Ghost",
+            "armor": "Heavy",
+            "remaining": 3360,
+            "spent": 2021
+          }
+        }
+      ],
+      "plantRoundTime": 49445,
+      "plantSite": "B",
+      "defuseRoundTime": 74248
+    },
+    {
+      "roundNum": 18,
+      "roundResult": "Elimination",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": null,
+      "bombDefuser": null,
+      "roundResultCode": "Elimination",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2176253,
+              "timeSinceRoundStartMillis": 16253,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-6",
+              "victimLocation": {
+                "x": 5845,
+                "y": 1014
+              },
+              "assistants": [
+                "demo-puuid-0001",
+                "synthetic-8-4"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            },
+            {
+              "timeSinceGameStartMillis": 2204357,
+              "timeSinceRoundStartMillis": 44357,
+              "killer": "synthetic-8-1",
+              "victim": "synthetic-8-8",
+              "victimLocation": {
+                "x": 262,
+                "y": 3197
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-6",
+              "damage": 119,
+              "headshots": 1,
+              "bodyshots": 2,
+              "legshots": 0
+            },
+            {
+              "receiver": "synthetic-8-8",
+              "damage": 146,
+              "headshots": 1,
+              "bodyshots": 3,
+              "legshots": 0
+            }
+          ],
+          "score": 433,
+          "economy": {
+            "loadoutValue": 5370,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 3357,
+            "spent": 650
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5069,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 985,
+            "spent": 2263
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2185103,
+              "timeSinceRoundStartMillis": 25103,
+              "killer": "synthetic-8-3",
+              "victim": "synthetic-8-9",
+              "victimLocation": {
+                "x": 6177,
+                "y": -8135
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-9",
+              "damage": 146,
+              "headshots": 0,
+              "bodyshots": 2,
+              "legshots": 0
+            }
+          ],
+          "score": 223,
+          "economy": {
+            "loadoutValue": 5641,
+            "weapon": "Phantom",
+            "armor": "Light",
+            "remaining": 2444,
+            "spent": 295
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5538,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 1374,
+            "spent": 2435
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 4247,
+            "weapon": "Spectre",
+            "armor": "Light",
+            "remaining": 3077,
+            "spent": 920
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2223848,
+              "timeSinceRoundStartMillis": 63848,
+              "killer": "synthetic-8-5",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": 1209,
+                "y": -2376
+              },
+              "assistants": [
+                "synthetic-8-7"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Phantom",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 125,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 213,
+          "economy": {
+            "loadoutValue": 3706,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 3559,
+            "spent": 3477
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 3515,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 3425,
+            "spent": 4318
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2241183,
+              "timeSinceRoundStartMillis": 81183,
+              "killer": "synthetic-8-7",
+              "victim": "demo-puuid-0001",
+              "victimLocation": {
+                "x": 7723,
+                "y": 2792
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "demo-puuid-0001",
+              "damage": 103,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 202,
+          "economy": {
+            "loadoutValue": 8267,
+            "weapon": "Ghost",
+            "armor": "None",
+            "remaining": 2478,
+            "spent": 1459
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 1958,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 2861,
+            "spent": 1518
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6741,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 2923,
+            "spent": 1185
+          }
+        }
+      ]
+    },
+    {
+      "roundNum": 19,
+      "roundResult": "Bomb defused",
+      "roundCeremony": "CeremonyDefault",
+      "winningTeam": "Red",
+      "bombPlanter": "synthetic-8-9",
+      "bombDefuser": "synthetic-8-4",
+      "roundResultCode": "Defuse",
+      "playerStats": [
+        {
+          "puuid": "synthetic-8-1",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 7620,
+            "weapon": "Spectre",
+            "armor": "None",
+            "remaining": 1919,
+            "spent": 645
+          }
+        },
+        {
+          "puuid": "synthetic-8-2",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 6116,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 2701,
+            "spent": 1312
+          }
+        },
+        {
+          "puuid": "synthetic-8-3",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5346,
+            "weapon": "Phantom",
+            "armor": "None",
+            "remaining": 2230,
+            "spent": 4953
+          }
+        },
+        {
+          "puuid": "synthetic-8-4",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5902,
+            "weapon": "Operator",
+            "armor": "Light",
+            "remaining": 3399,
+            "spent": 2796
+          }
+        },
+        {
+          "puuid": "demo-puuid-0001",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2355616,
+              "timeSinceRoundStartMillis": 75616,
+              "killer": "demo-puuid-0001",
+              "victim": "synthetic-8-6",
+              "victimLocation": {
+                "x": 8300,
+                "y": 1484
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Operator",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-6",
+              "damage": 153,
+              "headshots": 0,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 227,
+          "economy": {
+            "loadoutValue": 3237,
+            "weapon": "Sheriff",
+            "armor": "Heavy",
+            "remaining": 2360,
+            "spent": 2923
+          }
+        },
+        {
+          "puuid": "synthetic-8-5",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2357216,
+              "timeSinceRoundStartMillis": 77216,
+              "killer": "synthetic-8-5",
+              "victim": "synthetic-8-2",
+              "victimLocation": {
+                "x": 3035,
+                "y": 3089
+              },
+              "assistants": [
+                "synthetic-8-8"
+              ],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-2",
+              "damage": 118,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 0
+            }
+          ],
+          "score": 209,
+          "economy": {
+            "loadoutValue": 4523,
+            "weapon": "Operator",
+            "armor": "None",
+            "remaining": 3746,
+            "spent": 731
+          }
+        },
+        {
+          "puuid": "synthetic-8-6",
+          "kills": [
+            {
+              "timeSinceGameStartMillis": 2354743,
+              "timeSinceRoundStartMillis": 74743,
+              "killer": "synthetic-8-6",
+              "victim": "synthetic-8-4",
+              "victimLocation": {
+                "x": 3746,
+                "y": 1786
+              },
+              "assistants": [],
+              "finishingDamage": {
+                "damageType": "Weapon",
+                "damageItem": "Ghost",
+                "isSecondaryFireMode": false
+              }
+            }
+          ],
+          "damage": [
+            {
+              "receiver": "synthetic-8-4",
+              "damage": 150,
+              "headshots": 1,
+              "bodyshots": 1,
+              "legshots": 1
+            }
+          ],
+          "score": 225,
+          "economy": {
+            "loadoutValue": 6680,
+            "weapon": "Spectre",
+            "armor": "Heavy",
+            "remaining": 3558,
+            "spent": 3779
+          }
+        },
+        {
+          "puuid": "synthetic-8-7",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 5665,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 703,
+            "spent": 1942
+          }
+        },
+        {
+          "puuid": "synthetic-8-8",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 845,
+            "weapon": "Sheriff",
+            "armor": "None",
+            "remaining": 3439,
+            "spent": 689
+          }
+        },
+        {
+          "puuid": "synthetic-8-9",
+          "kills": [],
+          "damage": [],
+          "score": 0,
+          "economy": {
+            "loadoutValue": 2489,
+            "weapon": "Vandal",
+            "armor": "Light",
+            "remaining": 229,
+            "spent": 770
+          }
+        }
+      ],
+      "plantRoundTime": 49742,
+      "plantSite": "B",
+      "defuseRoundTime": 70660
+    }
+  ]
+}
