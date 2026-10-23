@@ -1,5 +1,6 @@
+import { MANUAL_ID_PREFIX, manualOutcome } from '@va/core';
 import type { ExclusionReason, PlayerMatchRecord } from './types.js';
-import { playerMatchRecords, playerRounds } from './schema.js';
+import { manualMatches, playerMatchRecords, playerRounds } from './schema.js';
 
 export type PlayerRoundRow = {
   roundNumber: number;
@@ -18,10 +19,12 @@ export type StoredPlayerRecord = PlayerMatchRecord & { excluded: ExclusionReason
 
 type RecordRow = typeof playerMatchRecords.$inferSelect;
 type RoundRow = typeof playerRounds.$inferSelect;
+export type ManualMatchRow = typeof manualMatches.$inferSelect;
 
 export function recordRowToDomain(r: RecordRow): StoredPlayerRecord {
   return {
     matchId: r.matchId,
+    source: 'riot',
     puuid: r.puuid,
     startedAt: r.startedAt.toISOString(),
     mapId: r.mapId,
@@ -93,5 +96,37 @@ export function roundRowToDomain(r: RoundRow): PlayerRoundRow {
     firstDeath: r.firstDeath,
     planted: r.planted,
     defused: r.defused,
+  };
+}
+
+export function manualRowToRecord(row: ManualMatchRow): StoredPlayerRecord {
+  return {
+    matchId: `${MANUAL_ID_PREFIX}${row.id}`,
+    source: 'manual',
+    puuid: `user:${row.userId}`,
+    startedAt: row.startedAt.toISOString(),
+    mapId: row.mapId,
+    queueId: row.queueId,
+    patch: row.patch,
+    agentId: row.agentId,
+    teamId: 'manual',
+    outcome: manualOutcome(row.roundsWon, row.roundsLost),
+    roundsPlayed: row.roundsWon + row.roundsLost,
+    roundsWon: row.roundsWon,
+    roundsLost: row.roundsLost,
+    kills: row.kills,
+    deaths: row.deaths,
+    assists: row.assists,
+    combatScore: row.combatScore,
+    damageDealt: row.damageDealt,
+    headshots: null,
+    bodyshots: null,
+    legshots: null,
+    firstKills: row.firstKills,
+    firstDeaths: row.firstDeaths,
+    plants: null,
+    defuses: null,
+    performanceScore: null,
+    excluded: (row.excluded as ExclusionReason | null) ?? null,
   };
 }

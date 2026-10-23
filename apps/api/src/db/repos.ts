@@ -4,7 +4,7 @@ import type { NameLookup } from '@va/core';
 import type { Db } from './client.js';
 import * as s from './schema.js';
 import type { ExclusionReason, LinkState, NormalizedMatch, PlayerMatchRecord, ShareField } from './types.js';
-import { recordDomainToRow, recordRowToDomain, roundRowToDomain, type PlayerRoundRow, type StoredPlayerRecord } from './mappers.js';
+import { manualRowToRecord, recordDomainToRow, recordRowToDomain, type ManualMatchRow, roundRowToDomain, type PlayerRoundRow, type StoredPlayerRecord } from './mappers.js';
 
 export type UserRow = typeof s.users.$inferSelect;
 export type RiotAccountRow = typeof s.riotAccounts.$inferSelect;
@@ -397,4 +397,164 @@ export async function saveSnapshot(
   result: unknown,
 ): Promise<void> {
   await db.insert(s.analysisSnapshots).values({ userId, kind, version, filter, result });
+}
+
+// ---------- manual matches ----------
+export type { ManualMatchRow };
+
+export interface ManualMatchFields {
+  startedAt: Date;
+  mapId: string;
+  agentId: string;
+  queueId: string;
+  patch: string | null;
+  roundsWon: number;
+  roundsLost: number;
+  kills: number;
+  deaths: number;
+  assists: number;
+  combatScore: number | null;
+  damageDealt: number | null;
+  firstKills: number | null;
+  firstDeaths: number | null;
+  note: string | null;
+  excluded: ExclusionReason | null;
+}
+
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+export function manualDedupeKey(f: ManualMatchFields): string {
+  return sha256Hex(
+    [f.startedAt.toISOString(), f.mapId, f.agentId, f.queueId, f.roundsWon, f.roundsLost, f.kills, f.deaths, f.assists].join('|'),
+  );
+}
+
+function manualValues(f: ManualMatchFields) {
+  return {
+    startedAt: f.startedAt,
+    mapId: f.mapId,
+    agentId: f.agentId,
+    queueId: f.queueId,
+    patch: f.patch,
+    roundsWon: f.roundsWon,
+    roundsLost: f.roundsLost,
+    kills: f.kills,
+    deaths: f.deaths,
+    assists: f.assists,
+    combatScore: f.combatScore,
+    damageDealt: f.damageDealt,
+    firstKills: f.firstKills,
+    firstDeaths: f.firstDeaths,
+    note: f.note,
+    excluded: f.excluded,
+    dedupeKey: manualDedupeKey(f),
+  };
+}
+
+export async function createManualMatch(db: Db, userId: string, f: ManualMatchFields): Promise<ManualMatchRow | 'duplicate'> {
+  const [row] = await db
+    .insert(s.manualMatches)
+    .values({ userId, ...manualValues(f) })
+    .onConflictDoNothing({ target: [s.manualMatches.userId, s.manualMatches.dedupeKey] })
+    .returning();
+  return row ?? 'duplicate';
+}
+
+export async function updateManualMatch(
+  db: Db,
+  userId: string,
+  id: string,
+  f: ManualMatchFields,
+): Promise<ManualMatchRow | 'duplicate' | null> {
+  if (!UUID_RE.test(id)) return null;
+  return db.transaction(async (tx) => {
+    const where = and(eq(s.manualMatches.id, id), eq(s.manualMatches.userId, userId));
+    const [existing] = await tx.select({ id: s.manualMatches.id }).from(s.manualMatches).where(where);
+    if (!existing) return null;
+    const values = manualValues(f);
+    const [clash] = await tx
+      .select({ id: s.manualMatches.id })
+      .from(s.manualMatches)
+      .where(and(eq(s.manualMatches.userId, userId), eq(s.manualMatches.dedupeKey, values.dedupeKey), sql`${s.manualMatches.id} <> ${id}`));
+    if (clash) return 'duplicate' as const;
+    const [row] = await tx
+      .update(s.manualMatches)
+      .set({ ...values, updatedAt: new Date() })
+      .where(where)
+      .returning();
+    return row ?? null;
+  });
+}
+
+export async function getManualMatch(db: Db, userId: string, id: string): Promise<ManualMatchRow | null> {
+  if (!UUID_RE.test(id)) return null;
+  const [row] = await db
+    .select()
+    .from(s.manualMatches)
+    .where(and(eq(s.manualMatches.id, id), eq(s.manualMatches.userId, userId)));
+  return row ?? null;
+}
+
+export async function deleteManualMatch(db: Db, userId: string, id: string): Promise<boolean> {
+  if (!UUID_RE.test(id)) return false;
+  const rows = await db
+    .delete(s.manualMatches)
+    .where(and(eq(s.manualMatches.id, id), eq(s.manualMatches.userId, userId)))
+    .returning({ id: s.manualMatches.id });
+  return rows.length > 0;
+}
+
+export async function deleteAllManualMatches(db: Db, userId: string): Promise<number> {
+  const rows = await db.delete(s.manualMatches).where(eq(s.manualMatches.userId, userId)).returning({ id: s.manualMatches.id });
+  return rows.length;
+}
+
+export async function existingManualDedupeKeys(db: Db, userId: string, keys: string[]): Promise<Set<string>> {
+  if (keys.length === 0) return new Set();
+  const rows = await db
+    .select({ k: s.manualMatches.dedupeKey })
+    .from(s.manualMatches)
+    .where(and(eq(s.manualMatches.userId, userId), inArray(s.manualMatches.dedupeKey, keys)));
+  return new Set(rows.map((r) => r.k));
+}
+
+/** One transaction; ON CONFLICT (user_id, dedupe_key) DO NOTHING. */
+export async function insertManualMatches(
+  db: Db,
+  userId: string,
+  rows: ManualMatchFields[],
+): Promise<{ inserted: number; duplicates: number }> {
+  if (rows.length === 0) return { inserted: 0, duplicates: 0 };
+  return db.transaction(async (tx) => {
+    let inserted = 0;
+    for (const f of rows) {
+      const res = await tx
+        .insert(s.manualMatches)
+        .values({ userId, ...manualValues(f) })
+        .onConflictDoNothing({ target: [s.manualMatches.userId, s.manualMatches.dedupeKey] })
+        .returning({ id: s.manualMatches.id });
+      inserted += res.length;
+    }
+    return { inserted, duplicates: rows.length - inserted };
+  });
+}
+
+export async function listUserRecords(
+  db: Db,
+  userId: string,
+  puuid: string | null,
+  opts?: { includeExcluded?: boolean },
+): Promise<StoredPlayerRecord[]> {
+  const riot = puuid === null ? [] : await listPlayerRecords(db, puuid, opts);
+  const where = opts?.includeExcluded
+    ? eq(s.manualMatches.userId, userId)
+    : and(eq(s.manualMatches.userId, userId), isNull(s.manualMatches.excluded));
+  const manualRows = await db.select().from(s.manualMatches).where(where);
+  const all = [...riot, ...manualRows.map(manualRowToRecord)];
+  all.sort((a, b) => {
+    const t = Date.parse(a.startedAt) - Date.parse(b.startedAt);
+    if (t !== 0) return t;
+    return a.matchId < b.matchId ? -1 : a.matchId > b.matchId ? 1 : 0;
+  });
+  return all;
 }

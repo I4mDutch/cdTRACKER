@@ -8,6 +8,7 @@ import {
   foreignKey,
   text,
   timestamp,
+  unique,
   uuid,
 } from 'drizzle-orm/pg-core';
 import type { NormalizedTeam, ShareField } from './types.js';
@@ -215,4 +216,35 @@ export const analysisSnapshots = pgTable(
     createdAt: tstz('created_at').notNull().defaultNow(),
   },
   (t) => [index('snapshots_user_kind_created_idx').on(t.userId, t.kind, t.createdAt)],
+);
+
+export const manualMatches = pgTable(
+  'manual_matches',
+  {
+    id: uuid('id').primaryKey().defaultRandom(),
+    userId: uuid('user_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
+    startedAt: tstz('started_at').notNull(),
+    mapId: text('map_id').notNull(),
+    agentId: text('agent_id').notNull(),
+    queueId: text('queue_id').notNull(),
+    patch: text('patch'),
+    roundsWon: integer('rounds_won').notNull(),
+    roundsLost: integer('rounds_lost').notNull(),
+    kills: integer('kills').notNull(),
+    deaths: integer('deaths').notNull(),
+    assists: integer('assists').notNull(),
+    combatScore: integer('combat_score'),
+    damageDealt: integer('damage_dealt'),
+    firstKills: integer('first_kills'),
+    firstDeaths: integer('first_deaths'),
+    note: text('note'),
+    excluded: text('excluded'),
+    dedupeKey: text('dedupe_key').notNull(),
+    createdAt: tstz('created_at').notNull().defaultNow(),
+    updatedAt: tstz('updated_at').notNull().defaultNow(),
+  },
+  (t) => [
+    index('manual_matches_user_started_idx').on(t.userId, t.startedAt),
+    unique('manual_matches_user_dedupe_uq').on(t.userId, t.dedupeKey),
+  ],
 );

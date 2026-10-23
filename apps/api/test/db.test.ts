@@ -31,7 +31,7 @@ function match(id: string, startedAt: string, over: Partial<NormalizedMatch> = {
 
 function rec(matchId: string, puuid: string, startedAt: string, over: Partial<PlayerMatchRecord> = {}): PlayerMatchRecord {
   return {
-    matchId, puuid, startedAt, mapId: '/Game/Maps/Ascent/Ascent', queueId: 'competitive', patch: '8.11',
+    matchId, source: 'riot', puuid, startedAt, mapId: '/Game/Maps/Ascent/Ascent', queueId: 'competitive', patch: '8.11',
     agentId: 'agent-1', teamId: 'Blue', outcome: 'win', roundsPlayed: 24, roundsWon: 13, roundsLost: 11,
     kills: 20, deaths: 15, assists: 5, combatScore: 5000, damageDealt: null, headshots: null, bodyshots: null, legshots: null,
     firstKills: null, firstDeaths: null, plants: null, defuses: null, performanceScore: null, ...over,
