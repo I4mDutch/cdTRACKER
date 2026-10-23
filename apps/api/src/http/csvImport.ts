@@ -122,6 +122,18 @@ function resolve(raw: string, list: { id: string; name: string }[]): string {
   return hit ? hit.id : raw.trim();
 }
 
+const FIELD_COLUMN: Record<string, string> = Object.fromEntries(Object.entries(COLUMN_FIELD).map(([col, field]) => [field, col]));
+
+/** Rewrites a validation error's `field:` prefix to the CSV column name, quoting the offending map/agent value. */
+function toColumnError(error: string, raw: Record<string, string>): string {
+  const m = /^(\w+): (.*)$/.exec(error);
+  if (!m) return error;
+  const [, field, problem] = m as unknown as [string, string, string];
+  const col = FIELD_COLUMN[field] ?? field;
+  const value = raw[field];
+  return (field === 'mapId' || field === 'agentId') && value !== undefined ? `${col}: ${problem} "${value}"` : `${col}: ${problem}`;
+}
+
 /** Parses and validates a whole import file. File-level problems throw a 400 HttpError; row problems are per-row. */
 export function parseImportFile(csv: string, catalog: Catalog): ParsedImportRow[] {
   const all = parseCsv(csv);
@@ -140,11 +152,13 @@ export function parseImportFile(csv: string, catalog: Catalog): ParsedImportRow[
 
   return data.map((row): ParsedImportRow => {
     const input: Record<string, unknown> = {};
+    const raw: Record<string, string> = {};
     header.forEach((col, idx) => {
       const field = COLUMN_FIELD[col]!;
       let v = (row.cells[idx] ?? '').trim();
       if (v.startsWith("'")) v = v.slice(1); // undo our export's formula-escaping
       if (v === '') return; // blank = not entered (optional) or missing (required → "is required")
+      raw[field] = v;
       if (field === 'mapId') input[field] = resolve(v, catalog.maps);
       else if (field === 'agentId') input[field] = resolve(v, catalog.agents);
       else if (NUMERIC_FIELDS.has(field) && NUMBER_RE.test(v)) input[field] = Number(v);
@@ -153,7 +167,8 @@ export function parseImportFile(csv: string, catalog: Catalog): ParsedImportRow[
     const errors: string[] = [];
     if (row.cells.length > header.length) errors.push(`row: has ${row.cells.length} cells but the header has ${header.length} columns`);
     const r = validateManualInput(input, catalog);
-    if (!r.ok) errors.push(...r.errors);
+    // Speak the file's language: "map: unknown map "Nowhere"" rather than API field names.
+    if (!r.ok) errors.push(...r.errors.map((e) => toColumnError(e, raw)));
     if (errors.length > 0 || !r.ok) return { line: row.line, status: 'invalid', errors, parsed: null };
     return { line: row.line, status: 'valid', errors: [], parsed: r.value };
   });

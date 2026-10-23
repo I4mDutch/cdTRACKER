@@ -151,7 +151,7 @@ export const manualInputSchema = z
     const rounds = v.roundsWon + v.roundsLost;
     if (rounds < 1) ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['roundsWon'], message: 'roundsWon and roundsLost must add up to at least 1 round' });
     if ((v.firstKills ?? 0) + (v.firstDeaths ?? 0) > rounds) {
-      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['firstKills'], message: 'firstKills plus firstDeaths cannot be more than the rounds played' });
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['firstKills'], message: 'first kills plus first deaths cannot be more than the rounds played' });
     }
   });
 

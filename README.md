@@ -15,6 +15,16 @@ npm run dev:api     # http://localhost:3000 — in-memory PGlite + fixtures, dem
 npm run dev:web     # http://localhost:5173 — click "Try demo"
 ```
 
+## Manual entry and CSV import
+
+You don't need a linked Riot account to add matches yourself:
+
+- **Matches → Add match** (`/matches/new`): map, agent, queue, date, score, K/D/A, plus optional ACS, ADR, first kills/deaths and a note. Blank optional fields count as *unavailable*, not zero.
+- **Import** (`/import`): download the template, fill it in, and upload it. You get a preview showing every row as Valid, Invalid or Duplicate before anything is saved. Imports are all-or-nothing: one invalid row blocks the whole file. Rows identical to something already saved are skipped. Limits are 1000 rows and 1 MB per file.
+- Manual entries are labelled "Manual" everywhere. The detail page says "Manual entry — entered by you, not from Riot". Every summary says "includes N manual entries". The filter bar has a **Source** filter (All / Riot only / Manual only).
+- Manual entries have no round-level data, so first-duel insights and the score's objective component use only the matches that have that data.
+- You can edit or delete entries individually, or delete them all from Settings. Unlinking Riot keeps your manual entries.
+
 ## Layout
 
 | Path | What |

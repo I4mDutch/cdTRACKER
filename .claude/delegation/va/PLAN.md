@@ -72,3 +72,9 @@ Key rules carried from plan.md:
 - T08 → T09: startup recovery for interrupted jobs added to the T09 spec.
 - Integration (Opus): end-to-end run in Playwright (demo login → sync → every view). Fixed mobile overflow from the visually-hidden chart table. An independent Sonnet agent reviewed the security/privacy code.
 - Final: 175 tests (core 87, api 74, web 14), typecheck and web build all green.
+
+### Manual entry + CSV import (follow-up)
+- Opus wrote the contracts (shared manual/import DTOs, `source` on records/filters, per-field coverage, `catalog` on filter options) and core `manualOutcome`/`manualExclusion`.
+- T10 core, T11 DB (`manual_matches` + migration 0001), T13 web ran in parallel; T12 API ran after T10 and T11. All Sonnet, no blocks or retries.
+- Integration (Opus): Playwright run covering add match → detail → CSV dry run with an invalid row → valid import → Overview "includes 3 manual entries" → Source filter. CSV row errors now use the file's column names and quote the bad map/agent value.
+- Final: 261 tests (core 101, api 128, web 32), typecheck and build green.

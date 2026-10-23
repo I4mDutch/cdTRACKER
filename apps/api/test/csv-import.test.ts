@@ -85,8 +85,8 @@ describe('parseImportFile rows', () => {
   it('reports unknown map and agent', () => {
     const [r] = run(`${HEADER}\n2025-03-14,Nowhere,Nobody,13,9,18,12,5`);
     expect(r).toMatchObject({ status: 'invalid', parsed: null });
-    expect(r!.errors).toContain('mapId: unknown map');
-    expect(r!.errors).toContain('agentId: unknown agent');
+    expect(r!.errors.some((e) => /^map: unknown map "/.test(e))).toBe(true);
+    expect(r!.errors.some((e) => /^agent: unknown agent "/.test(e))).toBe(true);
   });
   it('turns blank optional cells into null and defaults the queue', () => {
     const [r] = run(`${HEADER},queue,acs,adr,first_kills,first_deaths,patch,note\n${ROW},,,,,,,`);
@@ -101,11 +101,11 @@ describe('parseImportFile rows', () => {
     expect(rows.map((r) => r.status)).toEqual(['valid', 'invalid', 'invalid', 'invalid']);
     expect(rows[1]!.errors[0]).toMatch(/^kills: /);
     expect(rows[2]!.errors[0]).toMatch(/^date: .*future/);
-    expect(rows[3]!.errors[0]).toMatch(/^roundsWon: /);
+    expect(rows[3]!.errors[0]).toMatch(/^rounds_won: /);
   });
   it('rejects first kills + first deaths above the rounds played', () => {
     const [r] = run(`${HEADER},first_kills,first_deaths\n2025-03-14,Ascent,Jett,1,1,1,1,1,2,1`);
-    expect(r!.errors.join()).toMatch(/firstKills/);
+    expect(r!.errors.join()).toMatch(/^first_kills: first kills plus first deaths/);
   });
   it('uses the physical line of the row start', () => {
     const rows = run(`${HEADER},note\n${ROW},"a\nb"\n2025-03-15,Ascent,Jett,13,9,18,12,5,x`);
