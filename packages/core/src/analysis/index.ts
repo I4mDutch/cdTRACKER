@@ -41,17 +41,15 @@ function recentMatchIds(subject: PlayerMatchRecord[]): string[] {
     .map((r) => r.matchId);
 }
 
-function firstDuelCounts(records: PlayerMatchRecord[]): { fk: number; fd: number; rounds: number } {
+function firstDuelCounts(records: PlayerMatchRecord[]): { fk: number; fd: number } {
   let fk = 0;
   let fd = 0;
-  let rounds = 0;
   for (const r of records) {
-    if (r.damageDealt === null) continue;
-    fk += r.firstKills ?? 0;
-    fd += r.firstDeaths ?? 0;
-    rounds += r.roundsPlayed;
+    if (r.firstKills === null || r.firstDeaths === null) continue;
+    fk += r.firstKills;
+    fd += r.firstDeaths;
   }
-  return { fk, fd, rounds };
+  return { fk, fd };
 }
 
 export function generateFindings(
@@ -81,6 +79,8 @@ export function generateFindings(
       const base = computeStatLine(others);
       const display = (kind === 'agent' ? names.agents[id] : names.maps[id]) ?? id;
       const matchIds = recentMatchIds(subject);
+      const manualCount = subject.filter((r) => r.source === 'manual').length;
+      const manualNote = manualCount > 0 ? ` Includes ${manualCount} manual entries.` : '';
       const common = { subject: { kind, id }, baselineLabel: BASELINE_LABEL, matchIds, analysisVersion: config.version };
 
       const make = (
@@ -109,7 +109,7 @@ export function generateFindings(
             evidence,
             summary: `${PREFIX[evidence]} ${summaryBody}`,
             recommendation,
-            method,
+            method: method + manualNote,
             ...common,
           },
           normGap,
@@ -198,14 +198,14 @@ export function generateFindings(
       // First duel win rate
       const sFd = firstDuelCounts(subject);
       if (
-        subj.coverage.roundDataRounds >= config.minRounds &&
+        subj.coverage.firstDuelRounds >= config.minRounds &&
         sFd.fk + sFd.fd >= 30 &&
         subj.firstDuelWinRate !== null &&
         base.firstDuelWinRate !== null
       ) {
         const gap = base.firstDuelWinRate - subj.firstDuelWinRate;
         if (gap >= config.winRateGap) {
-          const a = subj.coverage.roundDataRounds >= 2 * config.minRounds;
+          const a = subj.coverage.firstDuelRounds >= 2 * config.minRounds;
           const b = gap >= 2 * config.winRateGap;
           const evidence: EvidenceLevel = a && b ? 'strong' : a || b ? 'moderate' : 'low';
           make(
@@ -215,7 +215,7 @@ export function generateFindings(
             base.firstDuelWinRate,
             'below',
             evidence,
-            subj.coverage.roundDataRounds,
+            subj.coverage.firstDuelRounds,
             `your opening-duel win rate on ${display} is ${pct(subj.firstDuelWinRate)} across ${sFd.fk + sFd.fd} opening duels, vs ${pct(base.firstDuelWinRate)} in your other matches.`,
             `You lose more opening duels on ${display} than on your other agents. Review opening engagements in recent matches.`,
             `Compared opening-duel win rate on this agent with your other matches; flagged when ≥${pts(config.winRateGap)} pts lower with ≥${config.minRounds} rounds of round data and ≥30 opening duels. Evidence rises with more rounds and a larger gap.`,

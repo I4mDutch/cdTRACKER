@@ -14,6 +14,7 @@ function makeRecord(overrides: Partial<PlayerMatchRecord> = {}): PlayerMatchReco
   counter++;
   return {
     matchId: `m${String(counter).padStart(3, '0')}`,
+    source: 'riot',
     puuid: 'p1',
     startedAt: new Date(Date.UTC(2025, 0, 1, 0, counter)).toISOString(),
     mapId: 'ascent',
@@ -120,7 +121,7 @@ describe('computeStatLine', () => {
       expect(s[k]).toBeNull();
     }
     expect(s.zeroDeaths).toBe(false);
-    expect(s.coverage).toEqual({ combatScore: 0, roundData: 0, roundDataRounds: 0 });
+    expect(s.coverage).toEqual({ combatScore: 0, roundData: 0, roundDataRounds: 0, firstDuel: 0, firstDuelRounds: 0 });
   });
 
   it('computes basic line with hand-checked values', () => {
@@ -153,7 +154,7 @@ describe('computeStatLine', () => {
     expect(s.firstKillsPerRound).toBe(0.1);
     expect(s.firstDeathsPerRound).toBe(0.1);
     expect(s.firstDuelWinRate).toBe(0.5);
-    expect(s.coverage).toEqual({ combatScore: 2, roundData: 2, roundDataRounds: 40 });
+    expect(s.coverage).toEqual({ combatScore: 2, roundData: 2, roundDataRounds: 40, firstDuel: 2, firstDuelRounds: 40 });
   });
 
   it('counts draws as non-wins', () => {
@@ -210,7 +211,7 @@ describe('computeStatLine', () => {
     expect(s.firstKillsPerRound).toBe(3 / 20);
     expect(s.firstDeathsPerRound).toBe(1 / 20);
     expect(s.firstDuelWinRate).toBe(0.75);
-    expect(s.coverage).toEqual({ combatScore: 2, roundData: 1, roundDataRounds: 20 });
+    expect(s.coverage).toEqual({ combatScore: 2, roundData: 1, roundDataRounds: 20, firstDuel: 1, firstDuelRounds: 20 });
     // per-round kills still use all rounds: 20 / 50
     expect(s.killsPerRound).toBe(20 / 50);
   });

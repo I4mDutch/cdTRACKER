@@ -37,6 +37,7 @@ export function filterRecords(records: PlayerMatchRecord[], filter: MatchFilter)
     if (filter.agentId && r.agentId !== filter.agentId) return false;
     if (filter.mapId && r.mapId !== filter.mapId) return false;
     if (filter.queueId && r.queueId !== filter.queueId) return false;
+    if (filter.source && r.source !== filter.source) return false;
     if (filter.patch && r.patch !== filter.patch) return false;
     if (from !== null || to !== null) {
       const t = Date.parse(r.startedAt);
@@ -80,6 +81,8 @@ export function computeStatLine(records: PlayerMatchRecord[]): StatLine {
   let hs = 0;
   let bs = 0;
   let ls = 0;
+  let fdCount = 0;
+  let fdRounds = 0;
   let fk = 0;
   let fd = 0;
 
@@ -96,15 +99,22 @@ export function computeStatLine(records: PlayerMatchRecord[]): StatLine {
       csRounds += r.roundsPlayed;
       csCount++;
     }
+    // Independent per-metric record sets: a record missing one field never dilutes another metric.
     if (r.damageDealt !== null) {
       rdCount++;
       rdRounds += r.roundsPlayed;
       damage += r.damageDealt;
-      hs += r.headshots ?? 0;
-      bs += r.bodyshots ?? 0;
-      ls += r.legshots ?? 0;
-      fk += r.firstKills ?? 0;
-      fd += r.firstDeaths ?? 0;
+    }
+    if (r.headshots !== null && r.bodyshots !== null && r.legshots !== null) {
+      hs += r.headshots;
+      bs += r.bodyshots;
+      ls += r.legshots;
+    }
+    if (r.firstKills !== null && r.firstDeaths !== null) {
+      fdCount++;
+      fdRounds += r.roundsPlayed;
+      fk += r.firstKills;
+      fd += r.firstDeaths;
     }
   }
 
@@ -132,10 +142,10 @@ export function computeStatLine(records: PlayerMatchRecord[]): StatLine {
     acs: ratio(csSum, csRounds),
     adr: ratio(damage, rdRounds),
     headshotPct: ratio(hs, hs + bs + ls),
-    firstKillsPerRound: ratio(fk, rdRounds),
-    firstDeathsPerRound: ratio(fd, rdRounds),
+    firstKillsPerRound: ratio(fk, fdRounds),
+    firstDeathsPerRound: ratio(fd, fdRounds),
     firstDuelWinRate: ratio(fk, fk + fd),
-    coverage: { combatScore: csCount, roundData: rdCount, roundDataRounds: rdRounds },
+    coverage: { combatScore: csCount, roundData: rdCount, roundDataRounds: rdRounds, firstDuel: fdCount, firstDuelRounds: fdRounds },
   };
 }
 

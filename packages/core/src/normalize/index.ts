@@ -215,6 +215,7 @@ export function toPlayerRecord(match: NormalizedMatch, puuid: string): PlayerMat
 
   const base = {
     matchId: match.matchId,
+    source: 'riot',
     puuid,
     startedAt: match.startedAt,
     mapId: match.mapId,

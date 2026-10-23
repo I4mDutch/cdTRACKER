@@ -8,6 +8,7 @@ function rec(o: Partial<PlayerMatchRecord> = {}): PlayerMatchRecord {
   counter++;
   return {
     matchId: `m${String(counter).padStart(4, '0')}`,
+    source: 'riot',
     puuid: 'p1',
     startedAt: new Date(Date.UTC(2025, 0, 1, 0, counter)).toISOString(),
     mapId: 'ascent',
