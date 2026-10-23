@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { MatchSummaryDto } from '@va/shared';
-import { OUTCOME_LABEL, OUTCOME_WORD, fmtDate, fmtNum, kdOf } from '../format';
+import { MANUAL_TITLE, OUTCOME_LABEL, OUTCOME_WORD, fmtDate, fmtNum, kdOf } from '../format';
 import { Val } from './Val';
 
 export function MatchTable({ rows, caption }: { rows: MatchSummaryDto[]; caption: string }) {
@@ -26,6 +26,14 @@ export function MatchTable({ rows, caption }: { rows: MatchSummaryDto[]; caption
             <tr key={m.matchId}>
               <td>
                 <Link to={`/matches/${encodeURIComponent(m.matchId)}`}>{fmtDate(m.startedAt)}</Link>
+                {m.source === 'manual' && (
+                  <>
+                    {' '}
+                    <span className="badge badge-manual" title={MANUAL_TITLE}>
+                      Manual
+                    </span>
+                  </>
+                )}
               </td>
               <td>{m.mapName}</td>
               <td>{m.agentName}</td>

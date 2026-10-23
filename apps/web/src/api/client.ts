@@ -5,9 +5,13 @@ import type {
   CreateShareLinkRequest,
   FilterOptionsResponse,
   InsightFeedbackRequest,
+  ImportRequest,
+  ImportResponse,
   InsightsResponse,
   MatchDetailDto,
   MatchFilter,
+  ManualMatchDto,
+  ManualMatchInput,
   MatchSummaryDto,
   MeResponse,
   Paginated,
@@ -49,6 +53,7 @@ export function filterParams(filter: MatchFilter): Record<string, string | numbe
     from: filter.from,
     to: filter.to,
     lastN: filter.lastN,
+    source: filter.source,
   };
 }
 
@@ -62,7 +67,7 @@ async function parseError(res: Response): Promise<ApiClientError> {
   return new ApiClientError(res.status, 'unknown', `Request failed (${res.status})`);
 }
 
-async function request<T>(method: 'GET' | 'POST' | 'DELETE', path: string, body?: unknown): Promise<T> {
+async function request<T>(method: 'GET' | 'POST' | 'PUT' | 'DELETE', path: string, body?: unknown): Promise<T> {
   const headers: Record<string, string> = {};
   if (method !== 'GET') {
     headers['X-Requested-With'] = 'va-web';
@@ -114,3 +119,15 @@ export const revokeShareLink = (id: string) => request<void>('DELETE', `/share-l
 export const getPublicProfile = (token: string) =>
   get<PublicProfileDto>(`/public/${encodeURIComponent(token)}`);
 export const unlinkAccount = () => request<void>('DELETE', '/account-link');
+
+export const createManualMatch = (input: ManualMatchInput) =>
+  request<ManualMatchDto>('POST', '/manual-matches', input);
+export const getManualMatch = (id: string) => get<ManualMatchDto>(`/manual-matches/${encodeURIComponent(id)}`);
+export const updateManualMatch = (id: string, input: ManualMatchInput) =>
+  request<ManualMatchDto>('PUT', `/manual-matches/${encodeURIComponent(id)}`, input);
+export const deleteManualMatch = (id: string) =>
+  request<void>('DELETE', `/manual-matches/${encodeURIComponent(id)}`);
+export const deleteAllManualMatches = () => request<void>('DELETE', '/manual-matches', { confirm: true });
+export const importManualCsv = (req: ImportRequest) =>
+  request<ImportResponse>('POST', '/manual-matches/import', req);
+export const manualTemplateUrl = () => '/api/manual-matches/template.csv';

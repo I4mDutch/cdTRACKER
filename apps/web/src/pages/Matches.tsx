@@ -1,4 +1,4 @@
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { getMatches } from '../api/client';
 import { useApi } from '../api/useApi';
 import { useFilter } from '../filters';
@@ -17,7 +17,17 @@ export function Matches() {
   };
   return (
     <div className="page">
-      <h1>Matches</h1>
+      <div className="page-head">
+        <h1>Matches</h1>
+        <div className="actions">
+          <Link className="button" to="/matches/new">
+            Add match
+          </Link>
+          <Link className="button secondary" to="/import">
+            Import CSV
+          </Link>
+        </div>
+      </div>
       <Query state={state}>
         {(d) => {
           if (d.total === 0) return <><MatchContext matches={0} /><Empty /></>;

@@ -47,7 +47,7 @@ export function statLine(over: Partial<StatLine> = {}): StatLine {
     rounds: 200, kills: 150, deaths: 140, assists: 50, kd: 1.07, kda: 1.43, zeroDeaths: false,
     killsPerRound: 0.75, deathsPerRound: 0.7, assistsPerRound: 0.25, acs: 210, adr: 140, headshotPct: 0.2,
     firstKillsPerRound: 0.1, firstDeathsPerRound: 0.1, firstDuelWinRate: 0.5,
-    coverage: { combatScore: 10, roundData: 10, roundDataRounds: 200 },
+    coverage: { combatScore: 10, roundData: 10, roundDataRounds: 200, firstDuel: 10, firstDuelRounds: 200 },
     ...over,
   };
 }

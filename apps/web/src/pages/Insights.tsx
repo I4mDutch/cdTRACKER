@@ -5,7 +5,7 @@ import { getInsights, sendInsightFeedback } from '../api/client';
 import { useApi } from '../api/useApi';
 import { useFilter } from '../filters';
 import { fmtMetric, metricLabel } from '../format';
-import { Empty, ErrorState, Query } from '../components/States';
+import { Empty, ErrorState, ManualInclude, Query } from '../components/States';
 
 function FindingCard({
   f,
@@ -99,6 +99,7 @@ export function Insights() {
             <>
               <p className="context">
                 Analysis {d.analysisVersion} · generated {d.generatedAt.slice(0, 10)}
+                <ManualInclude sources={d.sources} />
               </p>
               {active.length === 0 ? (
                 <Empty>No insights with enough evidence for these filters yet.</Empty>

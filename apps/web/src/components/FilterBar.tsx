@@ -72,6 +72,17 @@ export function FilterBar() {
         </select>
       </label>
       <label>
+        Source
+        <select
+          value={draft.source ?? ''}
+          onChange={(e) => apply({ source: (e.target.value || undefined) as MatchFilter['source'] })}
+        >
+          <option value="">All sources</option>
+          <option value="riot">Riot only</option>
+          <option value="manual">Manual only</option>
+        </select>
+      </label>
+      <label>
         From
         <input type="date" value={draft.from ?? ''} onChange={(e) => apply({ from: e.target.value || undefined })} />
       </label>

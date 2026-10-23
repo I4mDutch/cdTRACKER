@@ -23,6 +23,11 @@ export function PublicProfile() {
               <p className="context">
                 {p.matchCount} {p.matchCount === 1 ? 'match' : 'matches'} · {fmtRange(p.range.from, p.range.to)}
               </p>
+              {p.manualCount > 0 && (
+                <p className="small">
+                  Includes {p.manualCount} manually entered {p.manualCount === 1 ? 'match' : 'matches'}.
+                </p>
+              )}
               <dl className="facts">
                 {p.winRate !== undefined && (
                   <>

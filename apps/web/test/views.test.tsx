@@ -22,12 +22,13 @@ const summary: SummaryResponse = {
   ],
   recent: [],
   range: { from: '2026-01-01T00:00:00Z', to: '2026-01-02T00:00:00Z' },
+  sources: { riot: 10, manual: 0 },
 };
 const noScore: ScoreResponse = {
   available: false, reason: 'Needs at least 20 matches.', score: null, formulaVersion: 'score-v1',
-  components: [], coverage: 0, sampleMatches: 5, historyMatches: 5, relativeTo: 'own-history', window: { lastN: 20 },
+  components: [], coverage: 0, sampleMatches: 5, historyMatches: 5, relativeTo: 'own-history', window: { lastN: 20 }, sources: { riot: 5, manual: 0 },
 };
-const insights: InsightsResponse = { findings: [], analysisVersion: 'a1', generatedAt: '2026-01-03T00:00:00Z', dismissed: [], config: { minMatches: 5, minRounds: 100 } };
+const insights: InsightsResponse = { findings: [], analysisVersion: 'a1', generatedAt: '2026-01-03T00:00:00Z', dismissed: [], config: { minMatches: 5, minRounds: 100 }, sources: { riot: 5, manual: 0 } };
 
 describe('Overview', () => {
   it('shows a muted explanation instead of a score value when unavailable', async () => {
@@ -62,7 +63,7 @@ describe('Overview', () => {
 
 describe('Agents table', () => {
   const data: BreakdownResponse = {
-    filter: {}, baseline: statLine({ matches: 30 }), lowSampleThreshold: 5,
+    filter: {}, baseline: statLine({ matches: 30 }), lowSampleThreshold: 5, sources: { riot: 30, manual: 0 },
     rows: [
       { id: 'jett', name: 'Jett', stat: statLine({ matches: 20, winRate: 0.6, kd: 1.2 }), lowSample: false, winRateDelta: 0.1, kdDelta: 0.1 },
       { id: 'sage', name: 'Sage', stat: statLine({ matches: 3, winRate: 0.3, kd: 0.8 }), lowSample: true, winRateDelta: -0.2, kdDelta: -0.2 },
@@ -95,10 +96,11 @@ describe('Match detail', () => {
   it('shows a notice and no round table when rounds are empty', async () => {
     mockFetch({
       'GET /api/matches/m1': {
-        summary: { matchId: 'm1', startedAt: '2026-01-01T00:00:00Z', mapId: 'a', mapName: 'Ascent', queueId: 'competitive', patch: '9.01', agentId: 'jett', agentName: 'Jett', outcome: 'win', roundsWon: 13, roundsLost: 9, kills: 20, deaths: 10, assists: 5, acs: 250, adr: null, excluded: null },
+        summary: { matchId: 'm1', startedAt: '2026-01-01T00:00:00Z', mapId: 'a', mapName: 'Ascent', queueId: 'competitive', patch: '9.01', agentId: 'jett', agentName: 'Jett', source: 'riot', outcome: 'win', roundsWon: 13, roundsLost: 9, kills: 20, deaths: 10, assists: 5, acs: 250, adr: null, excluded: null },
         durationMs: 1800000,
         teams: [{ teamId: 'Blue', isPlayerTeam: true, roundsWon: 13, won: true }, { teamId: 'Red', isPlayerTeam: false, roundsWon: 9, won: false }],
         rounds: [],
+        manual: null,
         fieldSources: [{ field: 'adr', source: 'unavailable', note: 'no round data' }, { field: 'kills', source: 'riot' }],
       },
     });

@@ -45,7 +45,7 @@ function OverviewBody({ s }: { s: SummaryResponse }) {
     : 'Interval not available';
   return (
     <>
-      <MatchContext matches={o.matches} from={s.range.from} to={s.range.to} />
+      <MatchContext matches={o.matches} from={s.range.from} to={s.range.to} sources={s.sources} />
       <div className="cards">
         <section className="card" aria-label="Matches analyzed">
           <h3>Matches analyzed</h3>
@@ -117,7 +117,7 @@ export function Overview() {
         {(s) =>
           s.overall.matches === 0 ? (
             <>
-              <MatchContext matches={0} from={s.range.from} to={s.range.to} />
+              <MatchContext matches={0} from={s.range.from} to={s.range.to} sources={s.sources} />
               <Empty />
             </>
           ) : (

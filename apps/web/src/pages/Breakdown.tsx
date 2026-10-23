@@ -204,7 +204,7 @@ function BreakdownPage({ kind }: { kind: 'agents' | 'maps' }) {
       <Query state={state}>
         {(d) => (
           <>
-            <MatchContext matches={d.baseline.matches} />
+            <MatchContext matches={d.baseline.matches} sources={d.sources} />
             <BreakdownBody data={d} kind={kind} />
           </>
         )}

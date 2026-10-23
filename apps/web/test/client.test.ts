@@ -48,3 +48,25 @@ describe('api client', () => {
     expect(err).toMatchObject({ status: 502, code: 'unknown' });
   });
 });
+
+describe('manual entry client', () => {
+  it('sends confirm:true when deleting all, with CSRF header', async () => {
+    const fn = vi.fn(async () => jsonResponse(null, 204));
+    vi.stubGlobal('fetch', fn);
+    const { deleteAllManualMatches, manualTemplateUrl } = await import('../src/api/client');
+    await deleteAllManualMatches();
+    const [url, init] = fn.mock.calls[0] as unknown as [string, RequestInit];
+    expect(url).toBe('/api/manual-matches');
+    expect(init.method).toBe('DELETE');
+    expect(init.headers).toMatchObject({ 'X-Requested-With': 'va-web' });
+    expect(JSON.parse(init.body as string)).toEqual({ confirm: true });
+    expect(manualTemplateUrl()).toBe('/api/manual-matches/template.csv');
+  });
+
+  it('passes the source filter through to list endpoints', async () => {
+    const fn = vi.fn(async () => jsonResponse({}));
+    vi.stubGlobal('fetch', fn);
+    await getMatches({ source: 'manual' }, 1, 20);
+    expect((fn.mock.calls[0] as unknown as [string])[0]).toBe('/api/matches?page=1&pageSize=20&source=manual');
+  });
+});

@@ -91,3 +91,5 @@ export function kdOf(kills: number, deaths: number): string {
   if (deaths === 0) return kills > 0 ? kills.toFixed(2) : UNAVAILABLE;
   return (kills / deaths).toFixed(2);
 }
+
+export const MANUAL_TITLE = 'Entered manually — not from Riot';

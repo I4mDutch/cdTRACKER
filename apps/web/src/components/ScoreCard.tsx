@@ -1,5 +1,6 @@
 import { SCORE_DISCLAIMER, type ScoreResponse } from '@va/shared';
 import { fmtNum, fmtPct } from '../format';
+import { ManualInclude } from './States';
 
 export function ScoreCard({ score }: { score: ScoreResponse }) {
   return (
@@ -20,6 +21,7 @@ export function ScoreCard({ score }: { score: ScoreResponse }) {
       <p className="small">
         Formula {score.formulaVersion} · coverage {fmtPct(score.coverage, 0)} · relative to your own history (
         {score.sampleMatches} of {score.historyMatches} matches)
+        <ManualInclude sources={score.sources} />
       </p>
       <p className="small">Riot Performance Score: not available from the Riot API</p>
       <details>

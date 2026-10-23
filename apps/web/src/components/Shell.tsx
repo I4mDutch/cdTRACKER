@@ -13,6 +13,7 @@ const DATA_NAV = [
   { to: '/maps', label: 'Maps' },
   { to: '/insights', label: 'Insights' },
   { to: '/matches', label: 'Matches' },
+  { to: '/import', label: 'Import' },
 ];
 const FILTERED = new Set(['/', '/agents', '/maps', '/insights', '/matches']);
 

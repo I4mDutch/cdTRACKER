@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import type { LinkState, ShareField, ShareLinkDto, SyncResponse } from '@va/shared';
 import {
   connectRiot,
   createShareLink,
+  deleteAllManualMatches,
   exportCsvUrl,
   getShareLinks,
   getSyncJob,
@@ -228,6 +229,67 @@ function ShareSection() {
   );
 }
 
+function ManualSection() {
+  const [confirming, setConfirming] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [done, setDone] = useState(false);
+  return (
+    <section className="card" aria-labelledby="manual-entries">
+      <h2 id="manual-entries">Manual entries</h2>
+      <p>
+        Matches you typed in or imported from CSV are always labelled “Manual”. They are kept if you unlink your Riot
+        account.
+      </p>
+      <p>
+        <Link to="/matches?source=manual">View manual entries</Link> · <Link to="/matches/new">Add match</Link> ·{' '}
+        <Link to="/import">Import CSV</Link>
+      </p>
+      {error && <ErrorState error={{ message: error }} />}
+      {done && (
+        <p role="status" className="notice">
+          All manual entries were deleted.
+        </p>
+      )}
+      {!confirming && (
+        <button type="button" className="danger" onClick={() => { setDone(false); setConfirming(true); }}>
+          Delete all manual entries
+        </button>
+      )}
+      {confirming && (
+        <div role="alertdialog" aria-labelledby="mdel-title" aria-describedby="mdel-desc" className="confirm">
+          <h3 id="mdel-title">Delete all manual entries?</h3>
+          <p id="mdel-desc">
+            This permanently deletes every manual entry. It cannot be undone. Data from Riot is not affected.
+          </p>
+          <div className="actions">
+            <button
+              type="button"
+              className="danger"
+              onClick={() =>
+                deleteAllManualMatches().then(
+                  () => {
+                    setConfirming(false);
+                    setDone(true);
+                  },
+                  (e: Error) => {
+                    setError(e.message);
+                    setConfirming(false);
+                  },
+                )
+              }
+            >
+              Yes, delete all manual entries
+            </button>
+            <button type="button" className="secondary" onClick={() => setConfirming(false)}>
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 function DangerSection() {
   const { me, reloadMe } = useMe();
   const [confirming, setConfirming] = useState(false);
@@ -245,7 +307,8 @@ function DangerSection() {
         <div role="alertdialog" aria-labelledby="confirm-title" aria-describedby="confirm-desc" className="confirm">
           <h3 id="confirm-title">Delete your data?</h3>
           <p id="confirm-desc">
-            This unlinks your Riot account and permanently deletes all stored match data. It cannot be undone.
+            This unlinks your Riot account and permanently deletes all stored Riot match data. Your manual entries are
+            kept. It cannot be undone.
           </p>
           <div className="actions">
             <button
@@ -296,6 +359,7 @@ export function Settings() {
       <AccountSection />
       <ExportSection />
       <ShareSection />
+      <ManualSection />
       <DangerSection />
     </div>
   );

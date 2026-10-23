@@ -1,6 +1,18 @@
 import type { ReactNode } from 'react';
 import type { ApiState } from '../api/useApi';
+import type { SourceCounts } from '@va/shared';
 import { fmtRange } from '../format';
+import { MANUAL_TITLE } from '../format';
+
+/** " · includes N manual entries" — rendered only when manual records fed the numbers. */
+export function ManualInclude({ sources }: { sources?: SourceCounts | null }) {
+  if (!sources || sources.manual <= 0) return null;
+  return (
+    <span title={MANUAL_TITLE} data-testid="manual-included">
+      {' · '}includes {sources.manual} manual {sources.manual === 1 ? 'entry' : 'entries'}
+    </span>
+  );
+}
 
 export function Loading({ label = 'Loading…' }: { label?: string }) {
   return (
@@ -28,11 +40,22 @@ export function Empty({ children = 'No matches for these filters' }: { children?
 }
 
 /** "N matches · from – to" context line shown on every data view. */
-export function MatchContext({ matches, from, to }: { matches: number; from?: string | null; to?: string | null }) {
+export function MatchContext({
+  matches,
+  from,
+  to,
+  sources,
+}: {
+  matches: number;
+  from?: string | null;
+  to?: string | null;
+  sources?: SourceCounts | null;
+}) {
   return (
     <p className="context">
       {matches} {matches === 1 ? 'match' : 'matches'}
       {from !== undefined || to !== undefined ? ` · ${fmtRange(from, to)}` : ''}
+      <ManualInclude sources={sources} />
     </p>
   );
 }

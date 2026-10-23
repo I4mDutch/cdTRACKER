@@ -1,9 +1,67 @@
-import { Link, useParams } from 'react-router-dom';
-import { getMatch } from '../api/client';
+import { useState } from 'react';
+import type { MatchDetailDto } from '@va/shared';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { deleteManualMatch, getMatch } from '../api/client';
 import { useApi } from '../api/useApi';
-import { OUTCOME_WORD, fmtDateTime, fmtDuration, fmtNum, kdOf } from '../format';
-import { Query } from '../components/States';
+import { MANUAL_TITLE, OUTCOME_WORD, fmtDateTime, fmtDuration, fmtNum, kdOf } from '../format';
+import { ErrorState, Query } from '../components/States';
 import { Val } from '../components/Val';
+
+const SOURCE_LABEL: Record<string, string> = { riot: 'Riot', manual: 'Manual entry', calculated: 'Calculated', unavailable: 'unavailable' };
+
+function ManualBanner({ matchId, manual }: { matchId: string; manual: NonNullable<MatchDetailDto['manual']> }) {
+  const navigate = useNavigate();
+  const [confirming, setConfirming] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  return (
+    <section className="card manual-banner" aria-labelledby="manual-banner-title">
+      <h2 id="manual-banner-title" title={MANUAL_TITLE}>
+        Manual entry — entered by you, not from Riot
+      </h2>
+      {manual.note && <p>Note: {manual.note}</p>}
+      <p className="small">
+        Created {fmtDateTime(manual.createdAt)} · Updated {fmtDateTime(manual.updatedAt)}
+      </p>
+      {error && <ErrorState error={{ message: error }} />}
+      {!confirming && (
+        <div className="actions">
+          <Link className="button" to={`/matches/${encodeURIComponent(matchId)}/edit`}>
+            Edit
+          </Link>
+          <button type="button" className="danger" onClick={() => setConfirming(true)}>
+            Delete
+          </button>
+        </div>
+      )}
+      {confirming && (
+        <div role="alertdialog" aria-labelledby="del-title" aria-describedby="del-desc" className="confirm">
+          <h3 id="del-title">Delete this entry?</h3>
+          <p id="del-desc">This permanently deletes this manual entry. It cannot be undone.</p>
+          <div className="actions">
+            <button
+              type="button"
+              className="danger"
+              onClick={() =>
+                deleteManualMatch(matchId).then(
+                  () => navigate('/matches'),
+                  (e: Error) => {
+                    setError(e.message);
+                    setConfirming(false);
+                  },
+                )
+              }
+            >
+              Yes, delete entry
+            </button>
+            <button type="button" className="secondary" onClick={() => setConfirming(false)}>
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
 
 export function MatchDetail() {
   const { matchId = '' } = useParams();
@@ -19,9 +77,18 @@ export function MatchDetail() {
           const s = d.summary;
           return (
             <>
+              {d.manual && <ManualBanner matchId={s.matchId} manual={d.manual} />}
               <section className="card" aria-labelledby="ms">
                 <h2 id="ms">
                   {s.mapName} · {s.agentName}
+                  {s.source === 'manual' && (
+                    <>
+                      {' '}
+                      <span className="badge badge-manual" title={MANUAL_TITLE}>
+                        Manual
+                      </span>
+                    </>
+                  )}
                 </h2>
                 <p>
                   {s.excluded ? (
@@ -119,7 +186,11 @@ export function MatchDetail() {
                     </table>
                   </div>
                 ) : (
-                  <p className="notice">Round-level data wasn't provided for this match.</p>
+                  <p className="notice">
+                    {d.manual
+                      ? "Round-level data isn't available for manual entries."
+                      : "Round-level data wasn't provided for this match."}
+                  </p>
                 )}
               </section>
 
@@ -139,7 +210,7 @@ export function MatchDetail() {
                       {d.fieldSources.map((f) => (
                         <tr key={f.field}>
                           <th scope="row">{f.field}</th>
-                          <td>{f.source}</td>
+                          <td>{f.source === 'manual' ? SOURCE_LABEL.manual : f.source}</td>
                           <td>{f.note ?? ''}</td>
                         </tr>
                       ))}

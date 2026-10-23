@@ -10,6 +10,8 @@ export function parseFilter(sp: URLSearchParams): MatchFilter {
     const v = sp.get(k);
     if (v) f[k] = v;
   }
+  const src = sp.get('source');
+  if (src === 'riot' || src === 'manual') f.source = src;
   const n = Number(sp.get('lastN'));
   if (Number.isInteger(n) && n > 0) f.lastN = n;
   return f;
@@ -24,6 +26,7 @@ export function useFilter(): { filter: MatchFilter; filterKey: string; setFilter
     (f: MatchFilter) => {
       const next = new URLSearchParams();
       for (const k of KEYS) if (f[k]) next.set(k, f[k] as string);
+      if (f.source) next.set('source', f.source);
       if (f.lastN) next.set('lastN', String(f.lastN));
       setSp(next, { replace: false });
     },
