@@ -86,12 +86,17 @@ export type NormalizeResult =
   | { ok: true; match: NormalizedMatch; issues: DataIssue[] }
   | { ok: false; issues: DataIssue[] };
 
+/** Where a record came from. Manual records are typed in or CSV-imported by the user and are never presented as Riot data. */
+export type RecordSource = 'riot' | 'manual';
+
 /**
  * One row per (linked player, match): the unit every aggregate and insight is built on.
  * Built by core `toPlayerRecord`. Round-derived fields are null when match.rounds is empty.
  */
 export interface PlayerMatchRecord {
+  /** Riot match id, or `manual-<uuid>` for manual entries. */
   matchId: string;
+  source: RecordSource;
   puuid: string;
   startedAt: string;
   mapId: string;
@@ -137,6 +142,8 @@ export interface MatchFilter {
   to?: string;
   /** Keep only the N most recent matches after other filters */
   lastN?: number;
+  /** Restrict to one source; undefined = both */
+  source?: RecordSource;
 }
 
 export interface RateInterval {
@@ -168,21 +175,26 @@ export interface StatLine {
   assistsPerRound: number | null;
   /** Average combat score per round over matches where combatScore is available */
   acs: number | null;
-  /** Average damage per round over matches with round data */
+  /** Σ damageDealt / Σ rounds, over records where damageDealt !== null */
   adr: number | null;
-  /** headshots / (headshots + bodyshots + legshots) */
+  /** headshots / (headshots + bodyshots + legshots), over records where all three are non-null */
   headshotPct: number | null;
+  /** Over records where firstKills AND firstDeaths are non-null, divided by those records' rounds */
   firstKillsPerRound: number | null;
   firstDeathsPerRound: number | null;
-  /** firstKills / (firstKills + firstDeaths) */
+  /** firstKills / (firstKills + firstDeaths), same record set */
   firstDuelWinRate: number | null;
   coverage: {
     /** matches contributing combatScore */
     combatScore: number;
-    /** matches contributing round-level data */
+    /** matches contributing damageDealt */
     roundData: number;
-    /** rounds within matches that have round data (denominator for round-derived rates) */
+    /** rounds within those matches (ADR denominator) */
     roundDataRounds: number;
+    /** matches contributing firstKills + firstDeaths */
+    firstDuel: number;
+    /** rounds within those matches (first-duel per-round denominator) */
+    firstDuelRounds: number;
   };
 }
 
