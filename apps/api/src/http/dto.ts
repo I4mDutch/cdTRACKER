@@ -15,6 +15,7 @@ const perRound = (num: number | null, rounds: number): number | null => (num ===
 export function toMatchSummary(r: StoredPlayerRecord, names: NameLookup): MatchSummaryDto {
   return {
     matchId: r.matchId,
+    source: r.source,
     startedAt: r.startedAt,
     mapId: r.mapId,
     mapName: names.maps[r.mapId] ?? r.mapId,
@@ -85,6 +86,7 @@ export function toMatchDetail(
     })),
     rounds: roundDtos,
     fieldSources: sources,
+    manual: null,
   };
 }
 

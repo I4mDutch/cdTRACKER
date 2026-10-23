@@ -1,7 +1,7 @@
 import { eq } from 'drizzle-orm';
 import { createApp } from './app.js';
 import { EnvError, loadEnv, type Env } from './env.js';
-import { createNodePgDb, createPgliteDb, listQueuedJobs, schema, setLinkState, updateJob, type Db } from './db/index.js';
+import { createNodePgDb, createPgliteDb, listQueuedJobs, schema, setLinkState, updateJob, upsertContent, type Db } from './db/index.js';
 import { SyncQueue } from './ingestion/index.js';
 import { DEFAULT_FIXTURE_DIR, FixtureRiotClient, HttpRiotClient, type RiotClient } from './riot/index.js';
 import { log } from './http/errors.js';
@@ -17,6 +17,22 @@ async function recoverInterruptedJobs(db: Db): Promise<number> {
     await setLinkState(db, job.userId, 'sync_failed', { lastError: message });
   }
   return queued.length + running.length;
+}
+
+/** Manual entry needs the agent/map catalog even before any Riot sync, so load content once when it is missing. */
+async function ensureContent(db: Db, riot: RiotClient): Promise<void> {
+  try {
+    const existing = await db.select({ id: schema.contentItems.id }).from(schema.contentItems).limit(1);
+    if (existing.length > 0) return;
+    const content = await riot.getContent('na');
+    await upsertContent(db, [
+      ...content.characters.map((c) => ({ kind: 'agent' as const, id: c.id, name: c.name, assetPath: null })),
+      ...content.maps.map((m) => ({ kind: 'map' as const, id: m.id, name: m.name, assetPath: m.assetPath ?? null })),
+    ]);
+    log('content_loaded', { agents: content.characters.length, maps: content.maps.length });
+  } catch (err) {
+    log('content_load_failed', { error: err instanceof Error ? err.name : 'unknown' });
+  }
 }
 
 async function main(): Promise<void> {
@@ -51,6 +67,8 @@ async function main(): Promise<void> {
         clientSecret: env.rsoClientSecret as string,
         redirectUri: env.rsoRedirectUri as string,
       });
+
+  await ensureContent(db, riot);
 
   const recovered = await recoverInterruptedJobs(db);
   if (recovered > 0) log('recovered_interrupted_jobs', { count: recovered });

@@ -24,7 +24,10 @@ export function createApp(deps: AppDeps): express.Express {
   app.use(requestLogger());
 
   const api = express.Router();
-  api.use(express.json({ limit: '16kb' }));
+  // Only the CSV import route may carry a large body; everything else keeps the small default.
+  const defaultJson = express.json({ limit: '16kb' });
+  const importJson = express.json({ limit: '1.5mb' });
+  api.use((req, res, next) => (req.path === '/manual-matches/import' ? importJson(req, res, next) : defaultJson(req, res, next)));
   api.use(cookieParser());
   api.use(csrfGuard());
   api.use(sessionLoader(deps.db));

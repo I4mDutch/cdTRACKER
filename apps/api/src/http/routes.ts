@@ -10,12 +10,16 @@ import {
   filterRecords,
   generateFindings,
   groupStats,
+  MANUAL_ID_PREFIX,
   type NameLookup,
 } from '@va/core';
+import { MANUAL_LIMITS } from '@va/shared';
 import type {
   BreakdownResponse,
   ConnectResponse,
   FilterOptionsResponse,
+  ImportResponse,
+  ImportRowResult,
   InsightsResponse,
   LinkState,
   MatchFilter,
@@ -24,6 +28,7 @@ import type {
   PublicProfileDto,
   ScoreResponse,
   ShareLinkDto,
+  SourceCounts,
   SummaryResponse,
   SyncResponse,
 } from '@va/shared';
@@ -42,7 +47,16 @@ import {
   getRiotAccountByPuuid,
   getUser,
   listFeedback,
-  listPlayerRecords,
+  listUserRecords,
+  createManualMatch,
+  updateManualMatch,
+  getManualMatch,
+  deleteManualMatch,
+  deleteAllManualMatches,
+  existingManualDedupeKeys,
+  insertManualMatches,
+  manualDedupeKey,
+  manualRowToRecord,
   listShareLinks,
   resolveShareToken,
   revokeShareLink,
@@ -61,10 +75,23 @@ import type { RiotClient } from '../riot/index.js';
 import type { Env } from '../env.js';
 import { ALL_COLUMNS, COLUMN_DEFINITIONS, RECORD_COLUMNS, toCsv } from './csv.js';
 import { csvRow, toBreakdownRows, toMatchDetail, toMatchSummary } from './dto.js';
+import { buildTemplateCsv, parseImportFile } from './csvImport.js';
+import { loadCatalog, toManualDto, toManualFields, toManualMatchDetail } from './manual.js';
 import { HttpError, log } from './errors.js';
 import { SESSION_COOKIE, currentToken, currentUser, rateLimit, requireUser, userOf } from './middleware.js';
 import type { RsoProvider } from './rso.js';
-import { connectSchema, createShareSchema, feedbackSchema, paginationSchema as pagination, parse, parseFilter } from './validation.js';
+import {
+  confirmSchema,
+  connectSchema,
+  createShareSchema,
+  feedbackSchema,
+  importSchema,
+  paginationSchema as pagination,
+  parse,
+  parseFilter,
+  throwManualValidation,
+  validateManualInput,
+} from './validation.js';
 
 export interface RouterDeps {
   db: Db;
@@ -86,6 +113,11 @@ const jobState = (s: string): SyncResponse['state'] =>
   s === 'queued' || s === 'running' || s === 'succeeded' ? s : 'failed';
 
 const OAUTH_COOKIE = 'va_oauth_state';
+
+const countSources = (records: { source: string }[]): SourceCounts => {
+  const manual = records.filter((r) => r.source === 'manual').length;
+  return { riot: records.length - manual, manual };
+};
 
 const isoDay = (iso: string): string => iso.slice(0, 10);
 
@@ -135,8 +167,7 @@ export function createApiRouter(deps: RouterDeps): Router {
     opts?: { includeExcluded?: boolean },
   ): Promise<{ filter: MatchFilter; records: StoredPlayerRecord[]; all: StoredPlayerRecord[] }> => {
     const filter = parseFilter(req.query);
-    const puuid = await puuidOf(res);
-    const all = puuid ? await listPlayerRecords(db, puuid, opts) : [];
+    const all = await listUserRecords(db, userOf(res).id, await puuidOf(res), opts);
     return { filter, all, records: filterRecords(all, filter) as StoredPlayerRecord[] };
   };
 
@@ -280,8 +311,7 @@ export function createApiRouter(deps: RouterDeps): Router {
 
   // ---------- data ----------
   router.get('/filters/options', requireUser, async (_req, res) => {
-    const puuid = await puuidOf(res);
-    const records = puuid ? await listPlayerRecords(db, puuid) : [];
+    const records = await listUserRecords(db, userOf(res).id, await puuidOf(res));
     const names = await getNameLookup(db);
     const uniq = (xs: (string | null)[]): string[] => [...new Set(xs.filter((x): x is string => x !== null))].sort();
     const body: FilterOptionsResponse = {
@@ -289,6 +319,7 @@ export function createApiRouter(deps: RouterDeps): Router {
       maps: uniq(records.map((r) => r.mapId)).map((id) => ({ id, name: names.maps[id] ?? id })),
       queues: uniq(records.map((r) => r.queueId)),
       patches: uniq(records.map((r) => r.patch)).reverse(),
+      catalog: await loadCatalog(db),
     };
     res.json(body);
   });
@@ -304,8 +335,16 @@ export function createApiRouter(deps: RouterDeps): Router {
   });
 
   router.get('/matches/:matchId', requireUser, async (req, res) => {
+    const matchId = String(req.params.matchId);
+    if (matchId.startsWith(MANUAL_ID_PREFIX)) {
+      const id = matchId.slice(MANUAL_ID_PREFIX.length);
+      const row = UUID_RE.test(id) ? await getManualMatch(db, userOf(res).id, id) : null;
+      if (!row) throw new HttpError(404, 'not_found', 'Match not found.');
+      res.json(toManualMatchDetail(row, manualRowToRecord(row), await getNameLookup(db)));
+      return;
+    }
     const puuid = await puuidOf(res);
-    const found = puuid ? await getPlayerMatch(db, String(req.params.matchId), puuid) : null;
+    const found = puuid ? await getPlayerMatch(db, matchId, puuid) : null;
     if (!found) throw new HttpError(404, 'not_found', 'Match not found.');
     res.json(toMatchDetail(found.match, found.record, found.rounds, await getNameLookup(db)));
   });
@@ -323,6 +362,7 @@ export function createApiRouter(deps: RouterDeps): Router {
       })),
       recent: records.slice(-RECENT_COUNT).reverse().map((r) => toMatchSummary(r, names)),
       range: { from: records[0]?.startedAt ?? null, to: records[records.length - 1]?.startedAt ?? null },
+      sources: countSources(records),
     };
     res.json(body);
   });
@@ -337,6 +377,7 @@ export function createApiRouter(deps: RouterDeps): Router {
       baseline,
       rows: toBreakdownRows(groupStats(records, key), baseline, (id) => lookup[id] ?? id),
       lowSampleThreshold: DEFAULT_AGGREGATE_CONFIG.lowSampleMatches,
+      sources: countSources(records),
     };
     res.json(body);
   };
@@ -356,6 +397,7 @@ export function createApiRouter(deps: RouterDeps): Router {
       generatedAt,
       dismissed: feedback.filter((f) => f.action === 'dismiss').map((f) => f.findingId),
       config: { minMatches: DEFAULT_ANALYSIS_CONFIG.minMatches, minRounds: DEFAULT_ANALYSIS_CONFIG.minRounds },
+      sources: countSources(records),
     };
     await saveSnapshot(db, user.id, 'insights', DEFAULT_ANALYSIS_CONFIG.version, filter, findings);
     res.json(body);
@@ -371,7 +413,7 @@ export function createApiRouter(deps: RouterDeps): Router {
     const user = userOf(res);
     const { filter, records } = await loadFiltered(req, res);
     const result = computeAnalyzerScore(records);
-    const body: ScoreResponse = { ...result, window: { lastN: DEFAULT_SCORE_CONFIG.windowMatches } };
+    const body: ScoreResponse = { ...result, window: { lastN: DEFAULT_SCORE_CONFIG.windowMatches }, sources: countSources(records) };
     await saveSnapshot(db, user.id, 'score', DEFAULT_SCORE_CONFIG.formulaVersion, filter, body);
     res.json(body);
   });
@@ -424,7 +466,7 @@ export function createApiRouter(deps: RouterDeps): Router {
     const owner = share ? await getUser(db, share.userId) : null;
     if (!share || !owner) throw new HttpError(404, 'not_found', 'This link is invalid or has expired.');
     const account: RiotAccountRow | null = await getRiotAccount(db, owner.id);
-    const all = account ? await listPlayerRecords(db, account.puuid) : [];
+    const all = await listUserRecords(db, owner.id, account?.puuid ?? null);
     const records = filterRecords(all, { queueId: 'competitive' });
     const names = await getNameLookup(db);
     const stat = computeStatLine(records);
@@ -434,14 +476,17 @@ export function createApiRouter(deps: RouterDeps): Router {
       groupStats(records, key)
         .slice(0, 3)
         .map((g) => ({ name: lookup[g.key] ?? g.key, matches: g.stat.matches, winRate: g.stat.winRate }));
+    const manualCount = countSources(records).manual;
+    const manualNote = manualCount > 0 ? ` Includes ${manualCount} manually entered ${manualCount === 1 ? 'match' : 'matches'}.` : '';
     const body: PublicProfileDto = {
       displayName: owner.displayName,
       range: { from, to },
       matchCount: records.length,
+      manualCount,
       disclaimer:
-        from && to
+        (from && to
           ? `Stats from ${records.length} matches between ${isoDay(from)} and ${isoDay(to)}. Not an official Riot rating.`
-          : `Stats from ${records.length} matches. Not an official Riot rating.`,
+          : `Stats from ${records.length} matches. Not an official Riot rating.`) + manualNote,
     };
     if (share.fields.includes('winRate')) body.winRate = stat.winRate;
     if (share.fields.includes('kd')) body.kd = stat.kd;
@@ -449,6 +494,90 @@ export function createApiRouter(deps: RouterDeps): Router {
     if (share.fields.includes('topMaps')) body.topMaps = top('mapId', names.maps);
     res.setHeader('X-Robots-Tag', 'noindex');
     res.json(body);
+  });
+
+  // ---------- manual entry ----------
+  const manualIdOf = (req: Request): string => {
+    const raw = String(req.params.id);
+    const id = raw.startsWith(MANUAL_ID_PREFIX) ? raw.slice(MANUAL_ID_PREFIX.length) : '';
+    if (!UUID_RE.test(id)) throw new HttpError(404, 'not_found', 'Manual entry not found.');
+    return id;
+  };
+  const DUPLICATE = (): HttpError => new HttpError(409, 'duplicate', 'An identical manual entry already exists.');
+
+  router.post('/manual-matches', requireUser, async (req, res) => {
+    const v = validateManualInput(req.body, await loadCatalog(db));
+    if (!v.ok) throwManualValidation(v.errors);
+    const row = await createManualMatch(db, userOf(res).id, toManualFields(v.value));
+    if (row === 'duplicate') throw DUPLICATE();
+    res.status(201).json(toManualDto(row));
+  });
+
+  router.get('/manual-matches/template.csv', requireUser, async (_req, res) => {
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', 'attachment; filename="valorant-analyzer-manual-template.csv"');
+    res.send(buildTemplateCsv(await loadCatalog(db)));
+  });
+
+  router.post('/manual-matches/import', requireUser, sensitive, async (req, res) => {
+    const userId = userOf(res).id;
+    const input = parse(importSchema, req.body);
+    if (Buffer.byteLength(input.csv, 'utf8') > MANUAL_LIMITS.importMaxBytes) {
+      throw new HttpError(400, 'validation', `The file is too large: the limit is ${MANUAL_LIMITS.importMaxBytes / 1_000_000} MB per import.`);
+    }
+    const parsed = parseImportFile(input.csv, await loadCatalog(db));
+    const fields = parsed.map((r) => (r.parsed ? toManualFields(r.parsed) : null));
+    const keys = fields.map((f) => (f ? manualDedupeKey(f) : null));
+    const stored = await existingManualDedupeKeys(db, userId, keys.filter((k): k is string => k !== null));
+    const firstLine = new Map<string, number>();
+    const rows: ImportRowResult[] = parsed.map((r, i) => {
+      const key = keys[i];
+      if (r.status === 'invalid' || !key) return { line: r.line, status: 'invalid', errors: r.errors, parsed: null };
+      if (stored.has(key)) return { line: r.line, status: 'duplicate', errors: ['Already saved as a manual entry.'], parsed: r.parsed };
+      const earlier = firstLine.get(key);
+      if (earlier !== undefined) return { line: r.line, status: 'duplicate', errors: [`Same as line ${earlier} in this file.`], parsed: r.parsed };
+      firstLine.set(key, r.line);
+      return { line: r.line, status: 'valid', errors: [], parsed: r.parsed };
+    });
+    const counts = {
+      valid: rows.filter((r) => r.status === 'valid').length,
+      invalid: rows.filter((r) => r.status === 'invalid').length,
+      duplicate: rows.filter((r) => r.status === 'duplicate').length,
+    };
+    let imported = 0;
+    if (!input.dryRun && counts.invalid === 0) {
+      const toInsert = rows.flatMap((r, i) => (r.status === 'valid' && fields[i] ? [fields[i]!] : []));
+      imported = (await insertManualMatches(db, userId, toInsert)).inserted;
+    }
+    const body: ImportResponse = { dryRun: input.dryRun, rows, counts, imported };
+    res.json(body);
+  });
+
+  router.get('/manual-matches/:id', requireUser, async (req, res) => {
+    const row = await getManualMatch(db, userOf(res).id, manualIdOf(req));
+    if (!row) throw new HttpError(404, 'not_found', 'Manual entry not found.');
+    res.json(toManualDto(row));
+  });
+
+  router.put('/manual-matches/:id', requireUser, async (req, res) => {
+    const id = manualIdOf(req);
+    const v = validateManualInput(req.body, await loadCatalog(db));
+    if (!v.ok) throwManualValidation(v.errors);
+    const row = await updateManualMatch(db, userOf(res).id, id, toManualFields(v.value));
+    if (row === 'duplicate') throw DUPLICATE();
+    if (!row) throw new HttpError(404, 'not_found', 'Manual entry not found.');
+    res.json(toManualDto(row));
+  });
+
+  router.delete('/manual-matches/:id', requireUser, async (req, res) => {
+    if (!(await deleteManualMatch(db, userOf(res).id, manualIdOf(req)))) throw new HttpError(404, 'not_found', 'Manual entry not found.');
+    res.status(204).end();
+  });
+
+  router.delete('/manual-matches', requireUser, async (req, res) => {
+    parse(confirmSchema, req.body);
+    await deleteAllManualMatches(db, userOf(res).id);
+    res.status(204).end();
   });
 
   // ---------- account ----------
